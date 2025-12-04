@@ -1,0 +1,102 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": {
+                    "type": "grafana",
+                    "uid": "-- Grafana --"
+                },
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 1,
+    "links": [],
+    "panels": [
+        {
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 4,
+            "options": {
+                "code": {
+                    "language": "plaintext",
+                    "showLineNumbers": false,
+                    "showMiniMap": false
+                },
+                "content": "\n# Grafana Home\n\n",
+                "mode": "markdown"
+            },
+            "pluginVersion": "11.5.2",
+            "title": "",
+            "type": "text"
+        },
+        {
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 15,
+                "w": 12,
+                "x": 0,
+                "y": 2
+            },
+            "id": 2,
+            "options": {
+                "folderUID": "",
+                "includeVars": false,
+                "keepTime": false,
+                "maxItems": 30,
+                "query": "",
+                "showFolderNames": true,
+                "showHeadings": true,
+                "showRecentlyViewed": true,
+                "showSearch": false,
+                "showStarred": true,
+                "tags": []
+            },
+            "pluginVersion": "11.5.2",
+            "title": "Dashboards",
+            "type": "dashlist"
+        }
+    ],
+    "preload": false,
+    "refresh": "5m",
+    "schemaVersion": 40,
+    "tags": [],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-6h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Home",
+    "uid": "V7asoxrnk",
+    "version": 2,
+    "weekStart": ""
+}

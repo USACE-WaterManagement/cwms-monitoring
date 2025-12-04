@@ -1,0 +1,59 @@
+networks:
+  default:
+    name: cwms_monitoring
+
+services:
+  #--------------------------------
+  grafana:
+    build:
+      context: services/grafana
+    container_name: grafana
+    ports:
+      - "8080:8080"
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+      # Disable Analytics and Phoning home
+      - GF_ANALYTICS_ENABLED=false,
+      - GF_ANALYTICS_CHECK_FOR_UPDATES=false,
+      - GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES=false,
+      - GF_ANALYTICS_REPORTING_ENABLED=false,
+      - GF_ANALYTICS_FEEDBACK_LINKS_ENABLED=false
+      # General Settings,
+      - GF_SERVER_HTTP_PORT=8080
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_LOG_LEVEL=WARN
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/home.json
+      # PostgreSQL connection configuration
+      - GF_DATABASE_TYPE=postgres
+      - GF_DATABASE_HOST=postgres:5432
+      - GF_DATABASE_NAME=grafana
+      - GF_DATABASE_USER=grafana
+      - GF_DATABASE_PASSWORD=grafana
+    depends_on:
+      - postgres
+    restart: always
+    networks:
+      - default
+    # volumes:
+    # - ./_volumes/grafana/provisioning:/etc/grafana/provisioning
+    # - ./_volumes/grafana/data:/var/lib/grafana
+  #--------------------------------
+  postgres:
+    image: postgres:17 # Use PostgreSQL 17 image
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=grafana # Set PostgreSQL username
+      - POSTGRES_PASSWORD=grafana # Set PostgreSQL password
+      - POSTGRES_DB=grafana # Create a database named 'grafana'
+    ports:
+      - "5432:5432"
+
+    # volumes:
+    # - postgres_data:/var/lib/postgresql/data  # Persist PostgreSQL data
+
+    networks:
+      - default

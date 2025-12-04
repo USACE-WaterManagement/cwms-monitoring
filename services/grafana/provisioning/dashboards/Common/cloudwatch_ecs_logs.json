@@ -1,0 +1,376 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": {
+                    "type": "datasource",
+                    "uid": "grafana"
+                },
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "A simple Amazon Cloudwatch logs dashboard. It allow filtering by log groups, and quick searches of any terms to filter the log lines.",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 2,
+    "links": [],
+    "panels": [
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "fillOpacity": 80,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineWidth": 1,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 20,
+                "x": 0,
+                "y": 0
+            },
+            "id": 4,
+            "interval": "5m",
+            "options": {
+                "barRadius": 0,
+                "barWidth": 0.6,
+                "fullHighlight": false,
+                "groupWidth": 0.7,
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": false
+                },
+                "orientation": "auto",
+                "showValue": "auto",
+                "stacking": "none",
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                },
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 100
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "stats count() as log_count by bin(@timestamp, 1m)\n| filter isblank(\"$search\") or @message like /$search/\n| filter isblank(\"$log_level\") or @message like /(?i)(${log_level:pipe})/\n| sort @timestamp asc",
+                    "hide": false,
+                    "id": "",
+                    "label": "",
+                    "logGroups": [
+                        {
+                            "arn": "$log_group",
+                            "name": "$log_group"
+                        }
+                    ],
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 0,
+                    "namespace": "",
+                    "period": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Logs",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average",
+                    "statsGroups": [
+                        "bin(@timestamp",
+                        "1m)"
+                    ]
+                }
+            ],
+            "title": "Events timeline",
+            "type": "barchart"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "transparent",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 4,
+                "x": 20,
+                "y": 0
+            },
+            "id": 6,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "sum"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "text": {},
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "stats count() as log_count by bin(@timestamp, 1m)\n| filter isblank(\"$search\") or @message like /$search/\n| filter isblank(\"$log_level\") or @message like /(?i)(${log_level:pipe})/\n| sort @timestamp asc\n",
+                    "hide": false,
+                    "id": "",
+                    "label": "",
+                    "logGroups": [
+                        {
+                            "arn": "$log_group",
+                            "name": "$log_group"
+                        }
+                    ],
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 0,
+                    "namespace": "",
+                    "period": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Logs",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average",
+                    "statsGroups": [
+                        "bin(@timestamp",
+                        "1m)"
+                    ]
+                }
+            ],
+            "title": "Total events",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 17,
+                "w": 24,
+                "x": 0,
+                "y": 7
+            },
+            "id": 2,
+            "options": {
+                "dedupStrategy": "none",
+                "enableInfiniteScrolling": false,
+                "enableLogDetails": true,
+                "prettifyLogMessage": false,
+                "showCommonLabels": false,
+                "showLabels": false,
+                "showTime": false,
+                "sortOrder": "Descending",
+                "wrapLogMessage": false
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "uid": "${DS_CLOUDWATCH-WEBFACTORY}"
+                    },
+                    "expression": "fields @message\n| filter isblank(\"$search\") or @message like /$search/\n| filter isblank(\"$log_level\") or @message like /(?i)(${log_level:pipe})/\n| sort @timestamp desc\n| limit 10000",
+                    "id": "",
+                    "logGroups": [
+                        {
+                            "arn": "$log_group",
+                            "name": "$log_group"
+                        }
+                    ],
+                    "namespace": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Logs",
+                    "refId": "A",
+                    "region": "default",
+                    "statsGroups": []
+                }
+            ],
+            "title": "Logs",
+            "type": "logs"
+        }
+    ],
+    "preload": false,
+    "refresh": "",
+    "schemaVersion": 40,
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "current": {
+                    "text": "ecs/cumulus/cumulus-geoprocess",
+                    "value": "arn:aws-us-gov:logs:us-gov-west-1:718787032875:log-group:ecs/cumulus/cumulus-geoprocess:*"
+                },
+                "definition": "",
+                "label": "Log Group",
+                "name": "log_group",
+                "options": [],
+                "query": {
+                    "logGroupPrefix": "ecs/",
+                    "queryType": "logGroups",
+                    "refId": "CloudWatchVariableQueryEditor-VariableQuery",
+                    "region": "default"
+                },
+                "refresh": 1,
+                "regex": "",
+                "type": "query"
+            },
+            {
+                "current": {
+                    "text": "",
+                    "value": ""
+                },
+                "label": "Search",
+                "name": "search",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "",
+                        "value": ""
+                    }
+                ],
+                "query": "",
+                "type": "textbox"
+            },
+            {
+                "current": {
+                    "text": [
+                        "ERROR",
+                        "WARNING"
+                    ],
+                    "value": [
+                        "ERROR",
+                        "WARNING"
+                    ]
+                },
+                "label": "Log Level",
+                "multi": true,
+                "name": "log_level",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "DEBUG",
+                        "value": "DEBUG"
+                    },
+                    {
+                        "selected": false,
+                        "text": "INFO",
+                        "value": "INFO"
+                    },
+                    {
+                        "selected": true,
+                        "text": "WARNING",
+                        "value": "WARNING"
+                    },
+                    {
+                        "selected": true,
+                        "text": "ERROR",
+                        "value": "ERROR"
+                    }
+                ],
+                "query": "DEBUG,INFO,WARNING,ERROR",
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-3h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Cloudwatch ECS Logs",
+    "uid": "lYQ8-oQGk",
+    "version": 5,
+    "weekStart": ""
+}

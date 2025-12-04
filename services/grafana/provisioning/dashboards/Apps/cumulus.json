@@ -1,0 +1,4051 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": {
+                    "type": "datasource",
+                    "uid": "grafana"
+                },
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 2,
+    "links": [],
+    "panels": [
+        {
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 67,
+            "options": {
+                "code": {
+                    "language": "plaintext",
+                    "showLineNumbers": false,
+                    "showMiniMap": false
+                },
+                "content": "# Cumulus",
+                "mode": "markdown"
+            },
+            "pluginVersion": "11.5.2",
+            "title": "",
+            "transparent": true,
+            "type": "text"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 2
+            },
+            "id": 61,
+            "panels": [],
+            "title": "Database",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "continuous-GrYlRd",
+                        "seriesBy": "last"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 10,
+                "x": 0,
+                "y": 3
+            },
+            "id": 59,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cumulus"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "CPUUtilization",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "DB CPU Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 20
+                            },
+                            {
+                                "color": "orange",
+                                "value": 50
+                            },
+                            {
+                                "color": "red",
+                                "value": 75
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 10,
+                "y": 3
+            },
+            "id": 62,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cumulus"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "DatabaseConnections",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                }
+            ],
+            "title": "DB Connections",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "decbytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 13,
+                "y": 3
+            },
+            "id": 63,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cumulus"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "FreeStorageSpace",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "DB Available Storage",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 1024
+                            },
+                            {
+                                "color": "green",
+                                "value": 2048
+                            }
+                        ]
+                    },
+                    "unit": "decbytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 16,
+                "y": 3
+            },
+            "id": 66,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cumulus"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "FreeableMemory",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "DB Free Memory",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "dark-red",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-yellow",
+                                "value": 200
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 400
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 19,
+                "y": 3
+            },
+            "id": 68,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cumulus"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "CPUCreditBalance",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "CPU Credit Balance",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "decimals": 2,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 5,
+                "x": 10,
+                "y": 6
+            },
+            "id": 64,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cumulus"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "ReadIOPS",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "DB Read IOPS",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "decimals": 2,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 4,
+                "x": 15,
+                "y": 6
+            },
+            "id": 65,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cumulus"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "WriteIOPS",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "DB Write IOPS",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 19,
+                "y": 6
+            },
+            "id": 69,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cumulus"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "CPUCreditUsage",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "CPU Credit Usage",
+            "type": "stat"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 9
+            },
+            "id": 44,
+            "panels": [],
+            "title": "API",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "continuous-GrYlRd"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 10
+            },
+            "id": 46,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-api"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-api'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "API CPU Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 9,
+                "y": 10
+            },
+            "id": 47,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-api"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-api'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "API CPU Utilization",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "fillOpacity": 80,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineWidth": 1,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 10,
+                "w": 12,
+                "x": 12,
+                "y": 10
+            },
+            "id": 51,
+            "options": {
+                "barRadius": 0,
+                "barWidth": 0.97,
+                "fullHighlight": false,
+                "groupWidth": 0.7,
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "orientation": "auto",
+                "showValue": "auto",
+                "stacking": "none",
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                },
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 100
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "prometheus",
+                        "uid": "PBFA97CFB590B2093"
+                    },
+                    "dimensions": {
+                        "LoadBalancer": "app/cumulus-api-internal-alb/59e91c4360306ebd"
+                    },
+                    "editorMode": "builder",
+                    "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
+                    "expression": "",
+                    "hide": false,
+                    "id": "",
+                    "label": "",
+                    "legendFormat": "__auto",
+                    "logGroups": [],
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "HTTPCode_Target_2XX_Count",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/ApplicationELB",
+                    "period": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Metrics",
+                    "range": true,
+                    "refId": "B",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                },
+                {
+                    "datasource": {
+                        "type": "prometheus",
+                        "uid": "PBFA97CFB590B2093"
+                    },
+                    "dimensions": {
+                        "LoadBalancer": "app/cumulus-api-internal-alb/59e91c4360306ebd"
+                    },
+                    "editorMode": "builder",
+                    "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
+                    "expression": "",
+                    "hide": false,
+                    "id": "",
+                    "label": "",
+                    "legendFormat": "__auto",
+                    "logGroups": [],
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "HTTPCode_ELB_5XX_Count",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/ApplicationELB",
+                    "period": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Metrics",
+                    "range": true,
+                    "refId": "C",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                },
+                {
+                    "datasource": {
+                        "type": "prometheus",
+                        "uid": "PBFA97CFB590B2093"
+                    },
+                    "dimensions": {
+                        "LoadBalancer": "app/cumulus-api-internal-alb/59e91c4360306ebd"
+                    },
+                    "editorMode": "builder",
+                    "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
+                    "expression": "",
+                    "hide": false,
+                    "id": "",
+                    "label": "",
+                    "legendFormat": "__auto",
+                    "logGroups": [],
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "HTTPCode_ELB_4XX_Count",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/ApplicationELB",
+                    "period": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Metrics",
+                    "range": true,
+                    "refId": "D",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                }
+            ],
+            "title": "API Requests",
+            "type": "barchart"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "continuous-GrYlRd"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 15
+            },
+            "id": 48,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "MemoryUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-api"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(MemoryUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-api'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "API Memory Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 9,
+                "y": 15
+            },
+            "id": 49,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "MemoryUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-api"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(MemoryUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-api'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "API Memory Utilization",
+            "type": "gauge"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 20
+            },
+            "id": 19,
+            "panels": [],
+            "title": "GeoProcessor(s)",
+            "type": "row"
+        },
+        {
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 24,
+                "x": 0,
+                "y": 21
+            },
+            "id": 24,
+            "options": {
+                "code": {
+                    "language": "plaintext",
+                    "showLineNumbers": false,
+                    "showMiniMap": false
+                },
+                "content": "# GeoProcessor\n\nThis service transforms raw grid files (grib, netcdf, etc) to Cloud Optimized GeoTifs (COGs).",
+                "mode": "markdown"
+            },
+            "pluginVersion": "11.5.2",
+            "title": "",
+            "type": "text"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "This service converts raw grid files to Cloud Optimized GeoTifs (COGs)",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 24
+            },
+            "id": 21,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-geoprocess"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-geoprocess'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "GeoProcess CPU Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "This service converts raw grid files to Cloud Optimized GeoTifs (COGs)",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 9,
+                "y": 24
+            },
+            "id": 22,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-geoprocess"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-geoprocess'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "CPU Utilization",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 12,
+                "y": 24
+            },
+            "id": 30,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "NumberOfMessagesSent",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-geoprocess"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(NumberOfMessagesSent) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-geoprocess'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "GeoProcess Queue - Messages Sent",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 18,
+                "y": 24
+            },
+            "id": 32,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "ApproximateNumberOfMessagesVisible",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-geoprocess"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(ApproximateNumberOfMessagesVisible) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-geoprocess'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "GeoProcess Queue - Messages Visible",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 12,
+                "y": 27
+            },
+            "id": 31,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "NumberOfMessagesReceived",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-geoprocess"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(NumberOfMessagesReceived) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-geoprocess'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "GeoProcess Queue - Messages Received",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 18,
+                "y": 27
+            },
+            "id": 33,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "ApproximateNumberOfMessagesNotVisible",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-geoprocess"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(ApproximateNumberOfMessagesNotVisible) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-geoprocess'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "GeoProcess Queue - Messages NOT Visible",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 50
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 29
+            },
+            "id": 25,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "Memory Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "Memory Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "MemoryUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-geoprocess"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(MemoryUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-geoprocess'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "GeoProcess Memory Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 9,
+                "y": 29
+            },
+            "id": 26,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "MemoryUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-geoprocess"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(MemoryUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-geoprocess'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Memory Utilization",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "Requests that don’t return a message. A consumer polling an SQS queue continuously results in empty receives.",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 12,
+                "y": 30
+            },
+            "id": 52,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "SUM",
+                            "parameters": [
+                                {
+                                    "name": "NumberOfEmptyReceives",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-geoprocess"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT SUM(NumberOfEmptyReceives) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-geoprocess'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "GeoProcess Queue - Number Of Empty Receives",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "Unit is Seconds",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 18,
+                "y": 30
+            },
+            "id": 34,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "ApproximateAgeOfOldestMessage",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-geoprocess"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(ApproximateAgeOfOldestMessage) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-geoprocess'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "GeoProcess Queue - Age of Oldest Message",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 34
+            },
+            "id": 36,
+            "panels": [],
+            "title": "Packager/Downloads",
+            "type": "row"
+        },
+        {
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 24,
+                "x": 0,
+                "y": 35
+            },
+            "id": 54,
+            "options": {
+                "code": {
+                    "language": "plaintext",
+                    "showLineNumbers": false,
+                    "showMiniMap": false
+                },
+                "content": "# Packager\n\nThis service convert Cloud Optimized GeoTifs (COGs) into various formats including DSS.",
+                "mode": "markdown"
+            },
+            "pluginVersion": "11.5.2",
+            "title": "",
+            "type": "text"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 38
+            },
+            "id": 53,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-packager"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-packager'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Packager CPU Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 9,
+                "y": 38
+            },
+            "id": 55,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-packager"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-packager'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "CPU Utilization",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 12,
+                "y": 38
+            },
+            "id": 38,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "NumberOfMessagesSent",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-packager"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(NumberOfMessagesSent) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-packager'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Packager Queue - Messages Sent",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 18,
+                "y": 38
+            },
+            "id": 40,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "ApproximateNumberOfMessagesVisible",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-packager"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(ApproximateNumberOfMessagesVisible) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-packager'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Packager Queue - Messages Visible",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 12,
+                "y": 41
+            },
+            "id": 39,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "NumberOfMessagesReceived",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-packager"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(NumberOfMessagesReceived) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-packager'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Packager Queue - Messages Received",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 18,
+                "y": 41
+            },
+            "id": 41,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "ApproximateNumberOfMessagesNotVisible",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-packager"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(ApproximateNumberOfMessagesNotVisible) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-packager'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Packager Queue - Messages NOT Visible",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 50
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 43
+            },
+            "id": 56,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "Memory Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "Memory Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "MemoryUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-packager"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(MemoryUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-packager'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Packager Memory Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 9,
+                "y": 43
+            },
+            "id": 57,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "MemoryUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-packager"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(MemoryUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'cumulus-packager'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Memory Utilization",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 12,
+                "y": 44
+            },
+            "id": 70,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "NumberOfEmptyReceives",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "SUM",
+                            "parameters": [
+                                {
+                                    "name": "NumberOfEmptyReceives",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-packager"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT SUM(NumberOfEmptyReceives) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-packager'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Packager Queue - Empty Messages Received",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 18,
+                "y": 44
+            },
+            "id": 42,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/SQS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/SQS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "ApproximateAgeOfOldestMessage",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "cumulus-packager"
+                                    },
+                                    "property": {
+                                        "name": "QueueName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(ApproximateAgeOfOldestMessage) FROM \"AWS/SQS\" WHERE QueueName = 'cumulus-packager'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Packager Queue - Approx Age of Oldest Message",
+            "transparent": true,
+            "type": "stat"
+        }
+    ],
+    "preload": false,
+    "refresh": "5m",
+    "schemaVersion": 40,
+    "tags": [],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "Cumulus",
+    "uid": "BGENTiQ7z",
+    "version": 4,
+    "weekStart": ""
+}

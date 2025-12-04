@@ -1,0 +1,2623 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": {
+                    "type": "datasource",
+                    "uid": "grafana"
+                },
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 8,
+    "links": [],
+    "panels": [
+        {
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 67,
+            "options": {
+                "code": {
+                    "language": "plaintext",
+                    "showLineNumbers": false,
+                    "showMiniMap": false
+                },
+                "content": "# A2W",
+                "mode": "markdown"
+            },
+            "pluginVersion": "11.5.2",
+            "title": "",
+            "transparent": true,
+            "type": "text"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 2
+            },
+            "id": 61,
+            "panels": [],
+            "title": "CWMS Database",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "continuous-GrYlRd",
+                        "seriesBy": "last"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 10,
+                "x": 0,
+                "y": 3
+            },
+            "id": 59,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cwms"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "CPUUtilization",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "DB CPU Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 10,
+                "y": 3
+            },
+            "id": 62,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cwms"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "DatabaseConnections",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                }
+            ],
+            "title": "DB Connections",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "decbytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 13,
+                "y": 3
+            },
+            "id": 63,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cwms"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "FreeStorageSpace",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "DB Available Storage",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "decbytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 16,
+                "y": 3
+            },
+            "id": 66,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cwms"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "FreeableMemory",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "DB Free Memory",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "decimals": 2,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 5,
+                "x": 10,
+                "y": 6
+            },
+            "id": 64,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cwms"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "ReadIOPS",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "DB Read IOPS",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "decimals": 2,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 4,
+                "x": 15,
+                "y": 6
+            },
+            "id": 65,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "DBInstanceIdentifier": "cwms"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "WriteIOPS",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/RDS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "DB Write IOPS",
+            "type": "stat"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 9
+            },
+            "id": 44,
+            "panels": [],
+            "title": "A2W-API",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "continuous-GrYlRd"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 10
+            },
+            "id": 46,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-api"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'a2w-api'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "API CPU Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 9,
+                "y": 10
+            },
+            "id": 47,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-api"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'a2w-api'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "API CPU Utilization",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "fillOpacity": 80,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineWidth": 1,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 10,
+                "w": 12,
+                "x": 12,
+                "y": 10
+            },
+            "id": 51,
+            "options": {
+                "barRadius": 0,
+                "barWidth": 0.97,
+                "fullHighlight": false,
+                "groupWidth": 0.7,
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "orientation": "auto",
+                "showValue": "auto",
+                "stacking": "none",
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                },
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 100
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "prometheus",
+                        "uid": "PBFA97CFB590B2093"
+                    },
+                    "dimensions": {
+                        "LoadBalancer": "app/a2w-internal-alb/578a40f4e82747d5"
+                    },
+                    "editorMode": "builder",
+                    "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
+                    "expression": "",
+                    "hide": false,
+                    "id": "",
+                    "label": "",
+                    "legendFormat": "__auto",
+                    "logGroups": [],
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "HTTPCode_Target_2XX_Count",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/ApplicationELB",
+                    "period": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Metrics",
+                    "range": true,
+                    "refId": "B",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                },
+                {
+                    "datasource": {
+                        "type": "prometheus",
+                        "uid": "PBFA97CFB590B2093"
+                    },
+                    "dimensions": {
+                        "LoadBalancer": "app/a2w-internal-alb/578a40f4e82747d5"
+                    },
+                    "editorMode": "builder",
+                    "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
+                    "expression": "",
+                    "hide": false,
+                    "id": "",
+                    "label": "",
+                    "legendFormat": "__auto",
+                    "logGroups": [],
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "HTTPCode_ELB_5XX_Count",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/ApplicationELB",
+                    "period": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Metrics",
+                    "range": true,
+                    "refId": "C",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                },
+                {
+                    "datasource": {
+                        "type": "prometheus",
+                        "uid": "PBFA97CFB590B2093"
+                    },
+                    "dimensions": {
+                        "LoadBalancer": "app/a2w-internal-alb/578a40f4e82747d5"
+                    },
+                    "editorMode": "builder",
+                    "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
+                    "expression": "",
+                    "hide": false,
+                    "id": "",
+                    "label": "",
+                    "legendFormat": "__auto",
+                    "logGroups": [],
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "HTTPCode_ELB_4XX_Count",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/ApplicationELB",
+                    "period": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Metrics",
+                    "range": true,
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Sum"
+                }
+            ],
+            "title": "API Requests",
+            "type": "barchart"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "continuous-GrYlRd"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 15
+            },
+            "id": 48,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "MemoryUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-api"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(MemoryUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'a2w-api'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "API Memory Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 9,
+                "y": 15
+            },
+            "id": 49,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "MemoryUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-api"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(MemoryUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'a2w-api'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "API Memory Utilization",
+            "type": "gauge"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 20
+            },
+            "id": 19,
+            "panels": [],
+            "title": "A2W-Cache",
+            "type": "row"
+        },
+        {
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 24,
+                "x": 0,
+                "y": 21
+            },
+            "id": 24,
+            "options": {
+                "code": {
+                    "language": "plaintext",
+                    "showLineNumbers": false,
+                    "showMiniMap": false
+                },
+                "content": "## Cache Service\n\nPopulates Redis cache on scheduled basis for API to load larger datasets.",
+                "mode": "markdown"
+            },
+            "pluginVersion": "11.5.2",
+            "title": "",
+            "type": "text"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 24
+            },
+            "id": 21,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-api-cache"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'a2w-api-cache'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "CPU Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 9,
+                "y": 24
+            },
+            "id": 22,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-api-cache"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'a2w-api-cache'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "CPU Utilization",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 12,
+                "y": 24
+            },
+            "id": 30,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "CPUUtilization",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ElastiCache",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ElastiCache",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-cache-cluster"
+                                    },
+                                    "property": {
+                                        "name": "CacheClusterId",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/ElastiCache\" WHERE CacheClusterId = 'a2w-cache-cluster'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "ElastiCache - CPU Utilization",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 18,
+                "y": 24
+            },
+            "id": 69,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "DatabaseMemoryUsagePercentage",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ElastiCache",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ElastiCache",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "DatabaseMemoryUsagePercentage",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-cache-cluster"
+                                    },
+                                    "property": {
+                                        "name": "CacheClusterId",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(DatabaseMemoryUsagePercentage) FROM \"AWS/ElastiCache\" WHERE CacheClusterId = 'a2w-cache-cluster'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "ElastiCache - Memory Utilization",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 268435456
+                            },
+                            {
+                                "color": "red",
+                                "value": 536870912
+                            }
+                        ]
+                    },
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 12,
+                "y": 27
+            },
+            "id": 70,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "SwapUsage",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ElastiCache",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ElastiCache",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "SwapUsage",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-cache-cluster"
+                                    },
+                                    "property": {
+                                        "name": "CacheClusterId",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(SwapUsage) FROM \"AWS/ElastiCache\" WHERE CacheClusterId = 'a2w-cache-cluster'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "ElastiCache - Swap Usage",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 80
+                            },
+                            {
+                                "color": "green",
+                                "value": 81
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 18,
+                "y": 27
+            },
+            "id": 71,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "CacheHitRate",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ElastiCache",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ElastiCache",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CacheHitRate",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-cache-cluster"
+                                    },
+                                    "property": {
+                                        "name": "CacheClusterId",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CacheHitRate) FROM \"AWS/ElastiCache\" WHERE CacheClusterId = 'a2w-cache-cluster'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "ElastiCache - Cache Hit Rate",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 50
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 29
+            },
+            "id": 25,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "Memory Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "Memory Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "MemoryUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-api-cache"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(MemoryUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'a2w-api-cache'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Memory Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 9,
+                "y": 29
+            },
+            "id": 26,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ECS",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ECS",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "MemoryUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-api-cache"
+                                    },
+                                    "property": {
+                                        "name": "ServiceName",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(MemoryUtilization) FROM \"AWS/ECS\" WHERE ServiceName = 'a2w-api-cache'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Memory Utilization",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 3
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 100
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 12,
+                "y": 30
+            },
+            "id": 72,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "CurrConnections",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ElastiCache",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ElastiCache",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CurrConnections",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-cache-cluster"
+                                    },
+                                    "property": {
+                                        "name": "CacheClusterId",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CurrConnections) FROM \"AWS/ElastiCache\" WHERE CacheClusterId = 'a2w-cache-cluster'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "ElastiCache - Current Connections",
+            "transparent": true,
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 10
+                            },
+                            {
+                                "color": "green",
+                                "value": 30
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 6,
+                "x": 18,
+                "y": 30
+            },
+            "id": 73,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+            },
+            "pluginVersion": "11.5.2",
+            "targets": [
+                {
+                    "alias": "",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "CurrItems",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/ElastiCache",
+                    "period": "",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/ElastiCache",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CurrItems",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "a2w-cache-cluster"
+                                    },
+                                    "property": {
+                                        "name": "CacheClusterId",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CurrItems) FROM \"AWS/ElastiCache\" WHERE CacheClusterId = 'a2w-cache-cluster'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "ElastiCache - Current Items in Cache",
+            "transparent": true,
+            "type": "stat"
+        }
+    ],
+    "preload": false,
+    "refresh": "5m",
+    "schemaVersion": 40,
+    "tags": [],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "A2W",
+    "uid": "aegfnqv7lonwgf",
+    "version": 4,
+    "weekStart": ""
+}
