@@ -4,7 +4,7 @@ name: Build Grafana Image, Push to Dev
 # Controls when the action will run. Invokes the workflow on push events but only for the main branch
 on:
   push:
-    branches: [ignore-for-now]
+    branches: [cwbi-dev]
     paths:
       - .github/workflows/cwbi-dev-build-push-grafana.yml
       - "services/grafana/**"
@@ -40,7 +40,7 @@ jobs:
       - name: Build Image; Push to ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: wmes-metrics-grafana
+          ECR_REPOSITORY: cwms-monitoring-grafana
           IMAGE_TAG: latest
         run: |
           docker build services/grafana \
