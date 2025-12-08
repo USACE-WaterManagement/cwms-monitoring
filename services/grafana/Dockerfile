@@ -1,8 +1,22 @@
 FROM grafana/grafana:12.4.0-19913286788
 
+USER root
+
+# Install CA certificates and curl (needed for downloading the RDS CA bundle)
+RUN apk add --no-cache ca-certificates curl
+
+# Download the latest AWS RDS combined CA bundle for GovCloud
+RUN curl -o /etc/ssl/certs/rds-ca.pem https://truststore.pki.us-gov-west-1.rds.amazonaws.com/global/global-bundle.pem
+
+# Optionally append the RDS CA to system's trusted certificate bundle
+RUN cat /etc/ssl/certs/rds-ca.pem >> /etc/ssl/certs/ca-certificates.crt
+
+# Make sure the SSL certificate is accessible by Grafana
+RUN chmod 644 /etc/ssl/certs/rds-ca.pem
+
 COPY --chown=grafana ./provisioning/ /etc/grafana/provisioning
 
 # Base image is already running as non-root user
-# USER grafana
+USER grafana
 
 EXPOSE 8080
