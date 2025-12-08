@@ -12,8 +12,12 @@ RUN curl -o /etc/ssl/certs/rds-ca.pem https://truststore.pki.us-gov-west-1.rds.a
 RUN cat /etc/ssl/certs/rds-ca.pem >> /etc/ssl/certs/ca-certificates.crt
 
 # Make sure the SSL certificate is accessible by Grafana
-RUN chmod 644 /etc/ssl/certs/rds-ca.pem
+# RUN chmod 644 /etc/ssl/certs/rds-ca.pem
 
+# Copy the custom grafana.ini configuration file
+COPY --chown=grafana ./grafana.ini /etc/grafana/grafana.ini
+
+# Copy provisioning config
 COPY --chown=grafana ./provisioning/ /etc/grafana/provisioning
 
 # Base image is already running as non-root user
