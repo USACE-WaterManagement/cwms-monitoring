@@ -1,0 +1,673 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": {
+                    "type": "grafana",
+                    "uid": "-- Grafana --"
+                },
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 0,
+    "links": [],
+    "panels": [
+        {
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 7,
+            "options": {
+                "code": {
+                    "language": "plaintext",
+                    "showLineNumbers": false,
+                    "showMiniMap": false
+                },
+                "content": "# CWMS - OpenDCS",
+                "mode": "markdown"
+            },
+            "pluginVersion": "12.4.0-19913286788",
+            "title": "",
+            "transparent": true,
+            "type": "text"
+        },
+        {
+            "collapsed": true,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 2
+            },
+            "id": 6,
+            "panels": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": false,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "text",
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "showValues": false,
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": 0
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 11,
+                        "w": 16,
+                        "x": 0,
+                        "y": 3
+                    },
+                    "id": 1,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "hideZeros": false,
+                            "mode": "single",
+                            "sort": "none"
+                        }
+                    },
+                    "pluginVersion": "12.4.0-19913286788",
+                    "targets": [
+                        {
+                            "datasource": {
+                                "type": "cloudwatch",
+                                "uid": "P034F075C744B399F"
+                            },
+                            "dimensions": {
+                                "ClusterName": "cwms-opendcs-cluster"
+                            },
+                            "expression": "",
+                            "id": "",
+                            "label": "",
+                            "logGroups": [],
+                            "matchExact": false,
+                            "metricEditorMode": 0,
+                            "metricName": "CPUUtilization",
+                            "metricQueryType": 0,
+                            "namespace": "AWS/ECS",
+                            "period": "",
+                            "queryLanguage": "CWLI",
+                            "queryMode": "Metrics",
+                            "refId": "A",
+                            "region": "default",
+                            "sqlExpression": "",
+                            "statistic": "Average"
+                        }
+                    ],
+                    "title": "CPU Utilization (Avg)",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "auto",
+                                "cellOptions": {
+                                    "type": "auto"
+                                },
+                                "footer": {
+                                    "reducers": []
+                                },
+                                "inspect": false
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": 0
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 11,
+                        "w": 8,
+                        "x": 16,
+                        "y": 3
+                    },
+                    "id": 4,
+                    "options": {
+                        "cellHeight": "sm",
+                        "showHeader": true
+                    },
+                    "pluginVersion": "12.4.0-19913286788",
+                    "targets": [
+                        {
+                            "datasource": {
+                                "type": "cloudwatch",
+                                "uid": "P034F075C744B399F"
+                            },
+                            "dimensions": {
+                                "ClusterName": "cwms-opendcs-cluster"
+                            },
+                            "expression": "",
+                            "id": "",
+                            "label": "",
+                            "logGroups": [],
+                            "matchExact": false,
+                            "metricEditorMode": 0,
+                            "metricName": "CPUUtilization",
+                            "metricQueryType": 0,
+                            "namespace": "AWS/ECS",
+                            "period": "",
+                            "queryLanguage": "CWLI",
+                            "queryMode": "Metrics",
+                            "refId": "A",
+                            "region": "default",
+                            "sqlExpression": "",
+                            "statistic": "Maximum"
+                        }
+                    ],
+                    "title": "CPU Utilization (Max) > 90%",
+                    "transformations": [
+                        {
+                            "id": "reduce",
+                            "options": {
+                                "labelsToFields": false,
+                                "reducers": [
+                                    "max"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "greaterOrEqual",
+                                            "options": {
+                                                "value": "90"
+                                            }
+                                        },
+                                        "fieldName": "Max"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        }
+                    ],
+                    "type": "table"
+                }
+            ],
+            "title": "CPU",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 3
+            },
+            "id": 5,
+            "panels": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisBorderShow": false,
+                                "axisCenteredZero": false,
+                                "axisColorMode": "text",
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "barWidthFactor": 0.6,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "insertNulls": false,
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "showValues": false,
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": 0
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 11,
+                        "w": 16,
+                        "x": 0,
+                        "y": 15
+                    },
+                    "id": 3,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom",
+                            "showLegend": true
+                        },
+                        "tooltip": {
+                            "hideZeros": false,
+                            "mode": "single",
+                            "sort": "none"
+                        }
+                    },
+                    "pluginVersion": "12.4.0-19913286788",
+                    "targets": [
+                        {
+                            "datasource": {
+                                "type": "cloudwatch",
+                                "uid": "P034F075C744B399F"
+                            },
+                            "dimensions": {
+                                "ClusterName": "cwms-opendcs-cluster"
+                            },
+                            "expression": "",
+                            "id": "",
+                            "label": "",
+                            "logGroups": [],
+                            "matchExact": false,
+                            "metricEditorMode": 0,
+                            "metricName": "MemoryUtilization",
+                            "metricQueryType": 0,
+                            "namespace": "AWS/ECS",
+                            "period": "",
+                            "queryLanguage": "CWLI",
+                            "queryMode": "Metrics",
+                            "refId": "A",
+                            "region": "default",
+                            "sqlExpression": "",
+                            "statistic": "Average"
+                        }
+                    ],
+                    "title": "Memory Utilization (Avg)",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "auto",
+                                "cellOptions": {
+                                    "type": "auto"
+                                },
+                                "footer": {
+                                    "reducers": []
+                                },
+                                "inspect": false
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": 0
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 11,
+                        "w": 8,
+                        "x": 16,
+                        "y": 15
+                    },
+                    "id": 2,
+                    "options": {
+                        "cellHeight": "sm",
+                        "showHeader": true
+                    },
+                    "pluginVersion": "12.4.0-19913286788",
+                    "targets": [
+                        {
+                            "datasource": {
+                                "type": "cloudwatch",
+                                "uid": "P034F075C744B399F"
+                            },
+                            "dimensions": {
+                                "ClusterName": "cwms-opendcs-cluster"
+                            },
+                            "expression": "",
+                            "id": "",
+                            "label": "",
+                            "logGroups": [],
+                            "matchExact": false,
+                            "metricEditorMode": 0,
+                            "metricName": "MemoryUtilization",
+                            "metricQueryType": 0,
+                            "namespace": "AWS/ECS",
+                            "period": "",
+                            "queryLanguage": "CWLI",
+                            "queryMode": "Metrics",
+                            "refId": "A",
+                            "region": "default",
+                            "sqlExpression": "",
+                            "statistic": "Maximum"
+                        }
+                    ],
+                    "title": "Memory Utilization (Max) > 75%",
+                    "transformations": [
+                        {
+                            "id": "reduce",
+                            "options": {
+                                "labelsToFields": false,
+                                "reducers": [
+                                    "max"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "greaterOrEqual",
+                                            "options": {
+                                                "value": "75"
+                                            }
+                                        },
+                                        "fieldName": "Max"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        }
+                    ],
+                    "type": "table"
+                }
+            ],
+            "title": "Memory",
+            "type": "row"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 4
+            },
+            "id": 8,
+            "panels": [],
+            "title": "Logs",
+            "type": "row"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 14,
+                "w": 24,
+                "x": 0,
+                "y": 5
+            },
+            "id": 9,
+            "options": {
+                "dedupStrategy": "none",
+                "enableInfiniteScrolling": false,
+                "enableLogDetails": true,
+                "fontSize": "small",
+                "showControls": false,
+                "showTime": false,
+                "sortOrder": "Descending",
+                "wrapLogMessage": false
+            },
+            "pluginVersion": "12.4.0-19913286788",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "fields @message\n| filter isblank(\"$search\") or @message like /$search/\n| filter isblank(\"$log_level\") or @message like /(?i)(${log_level:pipe})/\n| sort @timestamp desc\n| limit 10000",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [
+                        {
+                            "arn": "$log_group",
+                            "name": "$log_group"
+                        }
+                    ],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 0,
+                    "namespace": "",
+                    "period": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Logs",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average",
+                    "statsGroups": []
+                }
+            ],
+            "title": "OpenDCS Logs - $log_group",
+            "type": "logs"
+        }
+    ],
+    "preload": false,
+    "schemaVersion": 42,
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "current": {
+                    "text": [
+                        "ecs/cwms-opendcs/cwms-opendcs-lrgs"
+                    ],
+                    "value": [
+                        "arn:aws-us-gov:logs:us-gov-west-1:718787032875:log-group:ecs/cwms-opendcs/cwms-opendcs-lrgs:*"
+                    ]
+                },
+                "datasource": {
+                    "type": "cloudwatch",
+                    "uid": "P034F075C744B399F"
+                },
+                "definition": "",
+                "label": "Log Group",
+                "multi": true,
+                "name": "log_group",
+                "options": [],
+                "query": {
+                    "logGroupPrefix": "ecs/cwms-opendcs/",
+                    "queryType": "logGroups",
+                    "refId": "CloudWatchVariableQueryEditor-VariableQuery",
+                    "region": "default"
+                },
+                "refresh": 1,
+                "regex": "",
+                "type": "query"
+            },
+            {
+                "current": {
+                    "text": "",
+                    "value": ""
+                },
+                "label": "Search",
+                "name": "search",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "",
+                        "value": ""
+                    }
+                ],
+                "query": "",
+                "type": "textbox"
+            },
+            {
+                "current": {
+                    "text": [
+                        "WARNING",
+                        "ERROR"
+                    ],
+                    "value": [
+                        "WARNING",
+                        "ERROR"
+                    ]
+                },
+                "description": "",
+                "label": "Log Level",
+                "multi": true,
+                "name": "log_level",
+                "options": [],
+                "query": "DEBUG,INFO,WARNING,ERROR",
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-3h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "CWMS - OpenDCS",
+    "uid": "scdjm5w",
+    "version": 11
+}
