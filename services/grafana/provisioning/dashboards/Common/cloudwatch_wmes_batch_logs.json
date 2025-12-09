@@ -287,8 +287,8 @@
         "list": [
             {
                 "current": {
-                    "text": "ecs/wmes-batch-jobs/lrh-jobs",
-                    "value": "arn:aws-us-gov:logs:us-gov-west-1:718787032875:log-group:ecs/wmes-batch-jobs/lrh-jobs:*"
+                    "text": "ecs/cwms-batch-jobs/lrh-jobs",
+                    "value": "arn:aws-us-gov:logs:us-gov-west-1:718787032875:log-group:ecs/cwms-batch-batch-jobs/lrh-jobs:*"
                 },
                 "definition": "",
                 "label": "Log Group",
@@ -329,7 +329,7 @@
     },
     "timepicker": {},
     "timezone": "",
-    "title": "WMES Batch Logs",
+    "title": "CWMS Batch Logs",
     "uid": "fenumaduk95hcd",
     "version": 6,
     "weekStart": ""
