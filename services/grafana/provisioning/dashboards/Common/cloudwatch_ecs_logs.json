@@ -4,8 +4,8 @@
             {
                 "builtIn": 1,
                 "datasource": {
-                    "type": "grafana",
-                    "uid": "-- Grafana --"
+                    "type": "datasource",
+                    "uid": "grafana"
                 },
                 "enable": true,
                 "hide": true,
@@ -15,10 +15,11 @@
             }
         ]
     },
+    "description": "A simple Amazon Cloudwatch logs dashboard. It allow filtering by log groups, and quick searches of any terms to filter the log lines.",
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 8,
+    "id": 12,
     "links": [],
     "panels": [
         {
@@ -29,7 +30,7 @@
             "fieldConfig": {
                 "defaults": {
                     "color": {
-                        "mode": "thresholds"
+                        "mode": "palette-classic"
                     },
                     "custom": {
                         "axisBorderShow": false,
@@ -37,38 +38,22 @@
                         "axisColorMode": "text",
                         "axisLabel": "",
                         "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "barWidthFactor": 0.6,
-                        "drawStyle": "line",
-                        "fillOpacity": 10,
-                        "gradientMode": "scheme",
+                        "fillOpacity": 80,
+                        "gradientMode": "none",
                         "hideFrom": {
                             "legend": false,
                             "tooltip": false,
                             "viz": false
                         },
-                        "insertNulls": false,
-                        "lineInterpolation": "smooth",
-                        "lineWidth": 2,
-                        "pointSize": 5,
+                        "lineWidth": 1,
                         "scaleDistribution": {
                             "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "showValues": false,
-                        "spanNulls": false,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
                         },
                         "thresholdsStyle": {
                             "mode": "off"
                         }
                     },
-                    "decimals": 0,
                     "mappings": [],
-                    "max": 100,
-                    "min": 0,
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [
@@ -77,424 +62,81 @@
                                 "value": 0
                             },
                             {
-                                "color": "dark-yellow",
-                                "value": 50
-                            },
-                            {
-                                "color": "dark-orange",
-                                "value": 75
-                            },
-                            {
-                                "color": "dark-red",
-                                "value": 90
+                                "color": "red",
+                                "value": 80
                             }
                         ]
                     }
-                },
-                "overrides": [
-                    {
-                        "__systemRef": "hideSeriesFrom",
-                        "matcher": {
-                            "id": "byNames",
-                            "options": {
-                                "mode": "exclude",
-                                "names": [
-                                    "CPUUtilization Average"
-                                ],
-                                "prefix": "All except:",
-                                "readOnly": true
-                            }
-                        },
-                        "properties": [
-                            {
-                                "id": "custom.hideFrom",
-                                "value": {
-                                    "legend": false,
-                                    "tooltip": true,
-                                    "viz": true
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            "gridPos": {
-                "h": 9,
-                "w": 18,
-                "x": 0,
-                "y": 0
-            },
-            "id": 2,
-            "options": {
-                "legend": {
-                    "calcs": [],
-                    "displayMode": "list",
-                    "placement": "bottom",
-                    "showLegend": true
-                },
-                "tooltip": {
-                    "hideZeros": false,
-                    "mode": "single",
-                    "sort": "none"
-                }
-            },
-            "pluginVersion": "12.4.0-19913286788",
-            "targets": [
-                {
-                    "dimensions": {
-                        "ServiceName": "$ServiceName"
-                    },
-                    "expression": "",
-                    "id": "",
-                    "label": "",
-                    "logGroups": [],
-                    "matchExact": false,
-                    "metricEditorMode": 0,
-                    "metricName": "CPUUtilization",
-                    "metricQueryType": 0,
-                    "namespace": "AWS/ECS",
-                    "period": "",
-                    "queryLanguage": "CWLI",
-                    "queryMode": "Metrics",
-                    "refId": "A",
-                    "region": "default",
-                    "sqlExpression": "",
-                    "statistic": "Average"
-                },
-                {
-                    "datasource": {
-                        "type": "cloudwatch",
-                        "uid": "P034F075C744B399F"
-                    },
-                    "dimensions": {
-                        "ServiceName": "$ServiceName"
-                    },
-                    "expression": "",
-                    "id": "",
-                    "label": "",
-                    "logGroups": [],
-                    "matchExact": false,
-                    "metricEditorMode": 0,
-                    "metricName": "CPUUtilization",
-                    "metricQueryType": 0,
-                    "namespace": "AWS/ECS",
-                    "period": "",
-                    "queryLanguage": "CWLI",
-                    "queryMode": "Metrics",
-                    "refId": "B",
-                    "region": "default",
-                    "sqlExpression": "",
-                    "statistic": "Minimum"
-                },
-                {
-                    "datasource": {
-                        "type": "cloudwatch",
-                        "uid": "P034F075C744B399F"
-                    },
-                    "dimensions": {
-                        "ServiceName": "$ServiceName"
-                    },
-                    "expression": "",
-                    "id": "",
-                    "label": "",
-                    "logGroups": [],
-                    "matchExact": false,
-                    "metricEditorMode": 0,
-                    "metricName": "CPUUtilization",
-                    "metricQueryType": 0,
-                    "namespace": "AWS/ECS",
-                    "period": "",
-                    "queryLanguage": "CWLI",
-                    "queryMode": "Metrics",
-                    "refId": "C",
-                    "region": "default",
-                    "sqlExpression": "",
-                    "statistic": "Maximum"
-                }
-            ],
-            "title": "CPU Utilization",
-            "type": "timeseries"
-        },
-        {
-            "datasource": {
-                "type": "cloudwatch",
-                "uid": "P034F075C744B399F"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "thresholds"
-                    },
-                    "decimals": 0,
-                    "mappings": [],
-                    "min": 0,
-                    "thresholds": {
-                        "mode": "percentage",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": 0
-                            },
-                            {
-                                "color": "#EAB839",
-                                "value": 50
-                            },
-                            {
-                                "color": "dark-orange",
-                                "value": 75
-                            },
-                            {
-                                "color": "dark-red",
-                                "value": 90
-                            }
-                        ]
-                    },
-                    "unit": "percent"
                 },
                 "overrides": []
             },
             "gridPos": {
-                "h": 9,
-                "w": 6,
-                "x": 18,
+                "h": 7,
+                "w": 20,
+                "x": 0,
                 "y": 0
             },
-            "id": 3,
-            "options": {
-                "minVizHeight": 75,
-                "minVizWidth": 75,
-                "orientation": "auto",
-                "reduceOptions": {
-                    "calcs": [
-                        "lastNotNull"
-                    ],
-                    "fields": "",
-                    "values": false
-                },
-                "showThresholdLabels": false,
-                "showThresholdMarkers": true,
-                "sizing": "auto"
-            },
-            "pluginVersion": "12.4.0-19913286788",
-            "targets": [
-                {
-                    "dimensions": {
-                        "ServiceName": "$ServiceName"
-                    },
-                    "expression": "",
-                    "id": "",
-                    "label": "",
-                    "logGroups": [],
-                    "matchExact": false,
-                    "metricEditorMode": 0,
-                    "metricName": "CPUUtilization",
-                    "metricQueryType": 0,
-                    "namespace": "AWS/ECS",
-                    "period": "",
-                    "queryLanguage": "CWLI",
-                    "queryMode": "Metrics",
-                    "refId": "A",
-                    "region": "default",
-                    "sqlExpression": "",
-                    "statistic": "Average"
-                }
-            ],
-            "title": "CPU Utilization",
-            "type": "gauge"
-        },
-        {
-            "datasource": {
-                "type": "cloudwatch",
-                "uid": "P034F075C744B399F"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "thresholds"
-                    },
-                    "custom": {
-                        "axisBorderShow": false,
-                        "axisCenteredZero": false,
-                        "axisColorMode": "text",
-                        "axisLabel": "",
-                        "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "barWidthFactor": 0.6,
-                        "drawStyle": "line",
-                        "fillOpacity": 10,
-                        "gradientMode": "scheme",
-                        "hideFrom": {
-                            "legend": false,
-                            "tooltip": false,
-                            "viz": false
-                        },
-                        "insertNulls": false,
-                        "lineInterpolation": "smooth",
-                        "lineWidth": 2,
-                        "pointSize": 5,
-                        "scaleDistribution": {
-                            "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "showValues": false,
-                        "spanNulls": false,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
-                        },
-                        "thresholdsStyle": {
-                            "mode": "off"
-                        }
-                    },
-                    "mappings": [],
-                    "max": 100,
-                    "min": 0,
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": 0
-                            },
-                            {
-                                "color": "dark-yellow",
-                                "value": 50
-                            },
-                            {
-                                "color": "dark-orange",
-                                "value": 75
-                            },
-                            {
-                                "color": "dark-red",
-                                "value": 90
-                            }
-                        ]
-                    },
-                    "unit": "percent"
-                },
-                "overrides": [
-                    {
-                        "__systemRef": "hideSeriesFrom",
-                        "matcher": {
-                            "id": "byNames",
-                            "options": {
-                                "mode": "exclude",
-                                "names": [
-                                    "MemoryUtilization Average"
-                                ],
-                                "prefix": "All except:",
-                                "readOnly": true
-                            }
-                        },
-                        "properties": [
-                            {
-                                "id": "custom.hideFrom",
-                                "value": {
-                                    "legend": false,
-                                    "tooltip": true,
-                                    "viz": true
-                                }
-                            }
-                        ]
-                    }
-                ]
-            },
-            "gridPos": {
-                "h": 9,
-                "w": 18,
-                "x": 0,
-                "y": 9
-            },
             "id": 4,
+            "interval": "5m",
             "options": {
+                "barRadius": 0,
+                "barWidth": 0.6,
+                "fullHighlight": false,
+                "groupWidth": 0.7,
                 "legend": {
                     "calcs": [],
                     "displayMode": "list",
                     "placement": "bottom",
-                    "showLegend": true
+                    "showLegend": false
                 },
+                "orientation": "auto",
+                "showValue": "auto",
+                "stacking": "none",
                 "tooltip": {
                     "hideZeros": false,
                     "mode": "single",
                     "sort": "none"
-                }
+                },
+                "xTickLabelRotation": 0,
+                "xTickLabelSpacing": 100
             },
             "pluginVersion": "12.4.0-19913286788",
             "targets": [
                 {
-                    "dimensions": {
-                        "ServiceName": "$ServiceName"
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
                     },
-                    "expression": "",
+                    "dimensions": {},
+                    "expression": "stats count() as log_count by bin(@timestamp, 1m)\n| filter isblank(\"$search\") or @message like /$search/\n| filter isblank(\"$log_level\") or @message like /(?i)(${log_level:pipe})/\n| sort @timestamp asc",
                     "id": "",
                     "label": "",
-                    "logGroups": [],
-                    "matchExact": false,
+                    "logGroups": [
+                        {
+                            "arn": "$log_group",
+                            "name": "$log_group"
+                        }
+                    ],
+                    "matchExact": true,
                     "metricEditorMode": 0,
-                    "metricName": "MemoryUtilization",
+                    "metricName": "",
                     "metricQueryType": 0,
-                    "namespace": "AWS/ECS",
+                    "namespace": "",
                     "period": "",
                     "queryLanguage": "CWLI",
-                    "queryMode": "Metrics",
+                    "queryMode": "Logs",
                     "refId": "A",
                     "region": "default",
                     "sqlExpression": "",
-                    "statistic": "Average"
-                },
-                {
-                    "datasource": {
-                        "type": "cloudwatch",
-                        "uid": "P034F075C744B399F"
-                    },
-                    "dimensions": {
-                        "ServiceName": "$ServiceName"
-                    },
-                    "expression": "",
-                    "id": "",
-                    "label": "",
-                    "logGroups": [],
-                    "matchExact": false,
-                    "metricEditorMode": 0,
-                    "metricName": "MemoryUtilization",
-                    "metricQueryType": 0,
-                    "namespace": "AWS/ECS",
-                    "period": "",
-                    "queryLanguage": "CWLI",
-                    "queryMode": "Metrics",
-                    "refId": "B",
-                    "region": "default",
-                    "sqlExpression": "",
-                    "statistic": "Minimum"
-                },
-                {
-                    "datasource": {
-                        "type": "cloudwatch",
-                        "uid": "P034F075C744B399F"
-                    },
-                    "dimensions": {
-                        "ServiceName": "$ServiceName"
-                    },
-                    "expression": "",
-                    "id": "",
-                    "label": "",
-                    "logGroups": [],
-                    "matchExact": false,
-                    "metricEditorMode": 0,
-                    "metricName": "MemoryUtilization",
-                    "metricQueryType": 0,
-                    "namespace": "AWS/ECS",
-                    "period": "",
-                    "queryLanguage": "CWLI",
-                    "queryMode": "Metrics",
-                    "refId": "C",
-                    "region": "default",
-                    "sqlExpression": "",
-                    "statistic": "Maximum"
+                    "statistic": "Average",
+                    "statsGroups": [
+                        "bin(@timestamp",
+                        "1m)"
+                    ]
                 }
             ],
-            "title": "Memory Utilization",
-            "type": "timeseries"
+            "title": "Events timeline",
+            "type": "barchart"
         },
         {
             "datasource": {
@@ -506,147 +148,230 @@
                     "color": {
                         "mode": "thresholds"
                     },
-                    "decimals": 0,
                     "mappings": [],
-                    "max": 100,
-                    "min": 0,
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green",
+                                "color": "transparent",
                                 "value": 0
-                            },
-                            {
-                                "color": "dark-yellow",
-                                "value": 50
-                            },
-                            {
-                                "color": "dark-orange",
-                                "value": 75
-                            },
-                            {
-                                "color": "dark-red",
-                                "value": 90
                             }
                         ]
-                    },
-                    "unit": "percent"
-                },
-                "overrides": [
-                    {
-                        "__systemRef": "hideSeriesFrom",
-                        "matcher": {
-                            "id": "byNames",
-                            "options": {
-                                "mode": "exclude",
-                                "names": [
-                                    "MemoryUtilization Average"
-                                ],
-                                "prefix": "All except:",
-                                "readOnly": true
-                            }
-                        },
-                        "properties": []
                     }
-                ]
+                },
+                "overrides": []
             },
             "gridPos": {
-                "h": 9,
-                "w": 6,
-                "x": 18,
-                "y": 9
+                "h": 7,
+                "w": 4,
+                "x": 20,
+                "y": 0
             },
-            "id": 5,
+            "id": 6,
             "options": {
-                "minVizHeight": 75,
-                "minVizWidth": 75,
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
                 "orientation": "auto",
+                "percentChangeColorMode": "standard",
                 "reduceOptions": {
                     "calcs": [
-                        "lastNotNull"
+                        "sum"
                     ],
                     "fields": "",
                     "values": false
                 },
-                "showThresholdLabels": false,
-                "showThresholdMarkers": true,
-                "sizing": "auto"
+                "showPercentChange": false,
+                "text": {},
+                "textMode": "auto",
+                "wideLayout": true
             },
             "pluginVersion": "12.4.0-19913286788",
             "targets": [
                 {
-                    "dimensions": {
-                        "ServiceName": "$ServiceName"
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
                     },
-                    "expression": "",
+                    "dimensions": {},
+                    "expression": "stats count() as log_count by bin(@timestamp, 1m)\n| filter isblank(\"$search\") or @message like /$search/\n| filter isblank(\"$log_level\") or @message like /(?i)(${log_level:pipe})/\n| sort @timestamp asc\n",
                     "id": "",
                     "label": "",
-                    "logGroups": [],
-                    "matchExact": false,
+                    "logGroups": [
+                        {
+                            "arn": "$log_group",
+                            "name": "$log_group"
+                        }
+                    ],
+                    "matchExact": true,
                     "metricEditorMode": 0,
-                    "metricName": "MemoryUtilization",
+                    "metricName": "",
                     "metricQueryType": 0,
-                    "namespace": "AWS/ECS",
+                    "namespace": "",
                     "period": "",
                     "queryLanguage": "CWLI",
-                    "queryMode": "Metrics",
+                    "queryMode": "Logs",
                     "refId": "A",
                     "region": "default",
                     "sqlExpression": "",
-                    "statistic": "Average"
+                    "statistic": "Average",
+                    "statsGroups": [
+                        "bin(@timestamp",
+                        "1m)"
+                    ]
                 }
             ],
-            "title": "Memory Utilization",
-            "type": "gauge"
+            "title": "Total events",
+            "type": "stat"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 17,
+                "w": 24,
+                "x": 0,
+                "y": 7
+            },
+            "id": 2,
+            "options": {
+                "dedupStrategy": "none",
+                "enableInfiniteScrolling": false,
+                "enableLogDetails": true,
+                "prettifyLogMessage": false,
+                "showCommonLabels": false,
+                "showControls": false,
+                "showLabels": false,
+                "showTime": false,
+                "sortOrder": "Descending",
+                "wrapLogMessage": false
+            },
+            "pluginVersion": "12.4.0-19913286788",
+            "targets": [
+                {
+                    "datasource": {
+                        "uid": "${DS_CLOUDWATCH-WEBFACTORY}"
+                    },
+                    "expression": "fields @message\n| filter isblank(\"$search\") or @message like /$search/\n| filter isblank(\"$log_level\") or @message like /(?i)(${log_level:pipe})/\n| sort @timestamp desc\n| limit 10000",
+                    "id": "",
+                    "logGroups": [
+                        {
+                            "arn": "$log_group",
+                            "name": "$log_group"
+                        }
+                    ],
+                    "namespace": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Logs",
+                    "refId": "A",
+                    "region": "default",
+                    "statsGroups": []
+                }
+            ],
+            "title": "Logs",
+            "type": "logs"
         }
     ],
     "preload": false,
-    "refresh": "5m",
+    "refresh": "",
     "schemaVersion": 42,
     "tags": [],
     "templating": {
         "list": [
             {
-                "allowCustomValue": false,
                 "current": {
-                    "text": [
-                        "a2w-api"
-                    ],
-                    "value": [
-                        "a2w-api"
-                    ]
+                    "text": "ecs/cumulus/cumulus-geoprocess",
+                    "value": "arn:aws-us-gov:logs:us-gov-west-1:718787032875:log-group:ecs/cumulus/cumulus-geoprocess:*"
                 },
                 "datasource": {
                     "type": "cloudwatch",
                     "uid": "P034F075C744B399F"
                 },
                 "definition": "",
-                "label": "Service Name",
-                "multi": true,
-                "name": "ServiceName",
+                "label": "Log Group",
+                "name": "log_group",
                 "options": [],
                 "query": {
-                    "dimensionKey": "ServiceName",
-                    "metricName": "CPUUtilization",
-                    "namespace": "AWS/ECS",
-                    "queryType": "dimensionValues",
+                    "logGroupPrefix": "ecs/",
+                    "queryType": "logGroups",
                     "refId": "CloudWatchVariableQueryEditor-VariableQuery",
                     "region": "default"
                 },
                 "refresh": 1,
-                "regex": "",
+                "regex": "/.*(?:cwms|cumulus|wmes|wme|ldm).*/",
                 "type": "query"
+            },
+            {
+                "current": {
+                    "text": "",
+                    "value": ""
+                },
+                "label": "Search",
+                "name": "search",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "",
+                        "value": ""
+                    }
+                ],
+                "query": "",
+                "type": "textbox"
+            },
+            {
+                "current": {
+                    "text": [
+                        "ERROR",
+                        "WARNING"
+                    ],
+                    "value": [
+                        "ERROR",
+                        "WARNING"
+                    ]
+                },
+                "label": "Log Level",
+                "multi": true,
+                "name": "log_level",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "DEBUG",
+                        "value": "DEBUG"
+                    },
+                    {
+                        "selected": false,
+                        "text": "INFO",
+                        "value": "INFO"
+                    },
+                    {
+                        "selected": true,
+                        "text": "WARNING",
+                        "value": "WARNING"
+                    },
+                    {
+                        "selected": true,
+                        "text": "ERROR",
+                        "value": "ERROR"
+                    }
+                ],
+                "query": "DEBUG,INFO,WARNING,ERROR",
+                "type": "custom"
             }
         ]
     },
     "time": {
-        "from": "now-6h",
+        "from": "now-3h",
         "to": "now"
     },
     "timepicker": {},
     "timezone": "browser",
-    "title": "ECS",
-    "uid": "deeyeqdokpm2od",
+    "title": "Cloudwatch ECS Logs",
+    "uid": "lYQ8-oQGk",
     "version": 1
 }

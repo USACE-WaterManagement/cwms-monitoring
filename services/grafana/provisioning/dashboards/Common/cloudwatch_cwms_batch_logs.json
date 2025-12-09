@@ -18,7 +18,7 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 13,
+    "id": 14,
     "links": [],
     "panels": [
         {
@@ -243,6 +243,7 @@
                 "dedupStrategy": "none",
                 "enableInfiniteScrolling": false,
                 "enableLogDetails": true,
+                "fontSize": "small",
                 "prettifyLogMessage": false,
                 "showCommonLabels": false,
                 "showControls": false,
@@ -333,5 +334,5 @@
     "timezone": "browser",
     "title": "CWMS Batch Logs",
     "uid": "fenumaduk95hcd",
-    "version": 3
+    "version": 1
 }
