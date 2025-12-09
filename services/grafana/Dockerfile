@@ -15,7 +15,7 @@ RUN cat /etc/ssl/certs/rds-ca.pem >> /etc/ssl/certs/ca-certificates.crt
 # RUN chmod 644 /etc/ssl/certs/rds-ca.pem
 
 # Copy the custom grafana.ini configuration file
-COPY --chown=grafana ./grafana.ini /etc/grafana/grafana.ini
+# COPY --chown=grafana ./grafana.ini /etc/grafana/grafana.ini
 
 # Copy provisioning config
 COPY --chown=grafana ./provisioning/ /etc/grafana/provisioning
