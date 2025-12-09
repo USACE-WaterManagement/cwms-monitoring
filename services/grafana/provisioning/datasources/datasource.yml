@@ -4,6 +4,7 @@ apiVersion: 1
 datasources:
   - name: CloudWatch
     type: cloudwatch
+    access: proxy
     jsonData:
       authType: default
       defaultRegion: us-gov-west-1
