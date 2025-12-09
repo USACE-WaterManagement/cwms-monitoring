@@ -18,7 +18,7 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 1,
+    "id": 8,
     "links": [],
     "panels": [
         {
@@ -55,6 +55,7 @@
                             "type": "linear"
                         },
                         "showPoints": "auto",
+                        "showValues": false,
                         "spanNulls": false,
                         "stacking": {
                             "group": "A",
@@ -73,7 +74,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "dark-yellow",
@@ -109,7 +110,7 @@
                                 "id": "custom.hideFrom",
                                 "value": {
                                     "legend": false,
-                                    "tooltip": false,
+                                    "tooltip": true,
                                     "viz": true
                                 }
                             }
@@ -137,7 +138,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-19913286788",
             "targets": [
                 {
                     "dimensions": {
@@ -169,7 +170,6 @@
                         "ServiceName": "$ServiceName"
                     },
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "logGroups": [],
@@ -195,7 +195,6 @@
                         "ServiceName": "$ServiceName"
                     },
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "logGroups": [],
@@ -234,7 +233,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "#EAB839",
@@ -276,7 +275,7 @@
                 "showThresholdMarkers": true,
                 "sizing": "auto"
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-19913286788",
             "targets": [
                 {
                     "dimensions": {
@@ -337,6 +336,7 @@
                             "type": "linear"
                         },
                         "showPoints": "auto",
+                        "showValues": false,
                         "spanNulls": false,
                         "stacking": {
                             "group": "A",
@@ -354,7 +354,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "dark-yellow",
@@ -391,7 +391,7 @@
                                 "id": "custom.hideFrom",
                                 "value": {
                                     "legend": false,
-                                    "tooltip": false,
+                                    "tooltip": true,
                                     "viz": true
                                 }
                             }
@@ -419,7 +419,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-19913286788",
             "targets": [
                 {
                     "dimensions": {
@@ -451,7 +451,6 @@
                         "ServiceName": "$ServiceName"
                     },
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "logGroups": [],
@@ -477,7 +476,6 @@
                         "ServiceName": "$ServiceName"
                     },
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "logGroups": [],
@@ -517,7 +515,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "dark-yellow",
@@ -575,7 +573,7 @@
                 "showThresholdMarkers": true,
                 "sizing": "auto"
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-19913286788",
             "targets": [
                 {
                     "dimensions": {
@@ -605,7 +603,7 @@
     ],
     "preload": false,
     "refresh": "5m",
-    "schemaVersion": 40,
+    "schemaVersion": 42,
     "tags": [],
     "templating": {
         "list": [
@@ -618,6 +616,10 @@
                     "value": [
                         "a2w-api"
                     ]
+                },
+                "datasource": {
+                    "type": "cloudwatch",
+                    "uid": "P034F075C744B399F"
                 },
                 "definition": "",
                 "label": "Service Name",
@@ -633,7 +635,7 @@
                     "region": "default"
                 },
                 "refresh": 1,
-                "regex": "",
+                "regex": "/.*(?:cwms|cumulus|wmes|wme|ldm).*/",
                 "type": "query"
             }
         ]
@@ -644,8 +646,7 @@
     },
     "timepicker": {},
     "timezone": "browser",
-    "title": "ECS",
+    "title": "ECS Metrics",
     "uid": "deeyeqdokpm2od",
-    "version": 1,
-    "weekStart": ""
+    "version": 1
 }
