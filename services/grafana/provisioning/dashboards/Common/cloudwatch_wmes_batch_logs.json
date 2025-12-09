@@ -287,8 +287,8 @@
         "list": [
             {
                 "current": {
-                    "text": "ecs/cwms-batch-jobs/lrh-jobs",
-                    "value": "arn:aws-us-gov:logs:us-gov-west-1:718787032875:log-group:ecs/cwms-batch-batch-jobs/lrh-jobs:*"
+                    "text": "ecs/cwms-batch/lrh-jobs",
+                    "value": "arn:aws-us-gov:logs:us-gov-west-1:718787032875:log-group:ecs/cwms-batch/lrh-jobs:*"
                 },
                 "definition": "",
                 "label": "Log Group",
