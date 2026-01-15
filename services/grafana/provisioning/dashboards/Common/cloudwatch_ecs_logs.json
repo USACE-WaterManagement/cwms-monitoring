@@ -100,7 +100,7 @@
                 "xTickLabelRotation": 0,
                 "xTickLabelSpacing": 100
             },
-            "pluginVersion": "12.4.0-19913286788",
+            "pluginVersion": "12.4.0-20585723282",
             "targets": [
                 {
                     "datasource": {
@@ -186,7 +186,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "12.4.0-19913286788",
+            "pluginVersion": "12.4.0-20585723282",
             "targets": [
                 {
                     "datasource": {
@@ -252,7 +252,7 @@
                 "sortOrder": "Descending",
                 "wrapLogMessage": false
             },
-            "pluginVersion": "12.4.0-19913286788",
+            "pluginVersion": "12.4.0-20585723282",
             "targets": [
                 {
                     "datasource": {
@@ -298,13 +298,14 @@
                 "name": "log_group",
                 "options": [],
                 "query": {
-                    "logGroupPrefix": "ecs/",
+                    "logGroupPrefix": "",
                     "queryType": "logGroups",
                     "refId": "CloudWatchVariableQueryEditor-VariableQuery",
                     "region": "default"
                 },
                 "refresh": 1,
-                "regex": "/.*(?:cwms|cumulus|wmes|wme|ldm).*/",
+                "regex": "/.*(?:ecs/cwms|ecs/cumulus|ecs/wmes|ecs/wme|ecs/ldm|wmeRadar.*-TaskDefcontainerLogGroup).*/",
+                "regexApplyTo": "value",
                 "type": "query"
             },
             {
@@ -373,5 +374,6 @@
     "timezone": "browser",
     "title": "Cloudwatch ECS Logs",
     "uid": "lYQ8-oQGk",
-    "version": 1
+    "version": 1,
+    "weekStart": ""
 }
