@@ -42,7 +42,7 @@
                 "content": "# CWMS - OpenDCS",
                 "mode": "markdown"
             },
-            "pluginVersion": "12.4.0-19913286788",
+            "pluginVersion": "12.4.0-20585723282",
             "title": "",
             "transparent": true,
             "type": "text"
@@ -118,7 +118,7 @@
                             }
                         ]
                     },
-                    "unit": "percentunit"
+                    "unit": "percent"
                 },
                 "overrides": []
             },
@@ -142,7 +142,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "12.4.0-19913286788",
+            "pluginVersion": "12.4.0-20585723282",
             "targets": [
                 {
                     "datasource": {
@@ -222,7 +222,7 @@
                 "cellHeight": "sm",
                 "showHeader": true
             },
-            "pluginVersion": "12.4.0-19913286788",
+            "pluginVersion": "12.4.0-20585723282",
             "targets": [
                 {
                     "datasource": {
@@ -557,7 +557,7 @@
                 "sortOrder": "Descending",
                 "wrapLogMessage": false
             },
-            "pluginVersion": "12.4.0-19913286788",
+            "pluginVersion": "12.4.0-20585723282",
             "targets": [
                 {
                     "datasource": {
@@ -624,6 +624,7 @@
                 },
                 "refresh": 1,
                 "regex": "",
+                "regexApplyTo": "value",
                 "type": "query"
             },
             {
@@ -672,5 +673,6 @@
     "timezone": "browser",
     "title": "CWMS - OpenDCS",
     "uid": "scdjm5w",
-    "version": 12
+    "version": 13,
+    "weekStart": ""
 }
