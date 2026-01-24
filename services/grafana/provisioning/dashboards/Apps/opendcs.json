@@ -18,7 +18,7 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 16,
+    "id": 11,
     "links": [],
     "panels": [
         {
@@ -207,7 +207,7 @@
                             }
                         ]
                     },
-                    "unit": "percentunit"
+                    "unit": "percent"
                 },
                 "overrides": []
             },
@@ -269,7 +269,7 @@
                                 "config": {
                                     "id": "greaterOrEqual",
                                     "options": {
-                                        "value": ".9"
+                                        "value": "90"
                                     }
                                 },
                                 "fieldName": "Max"
@@ -358,7 +358,7 @@
                         "h": 11,
                         "w": 16,
                         "x": 0,
-                        "y": 37
+                        "y": 15
                     },
                     "id": 3,
                     "options": {
@@ -374,7 +374,7 @@
                             "sort": "none"
                         }
                     },
-                    "pluginVersion": "12.4.0-19913286788",
+                    "pluginVersion": "12.4.0-20585723282",
                     "targets": [
                         {
                             "datasource": {
@@ -447,14 +447,14 @@
                         "h": 11,
                         "w": 8,
                         "x": 16,
-                        "y": 37
+                        "y": 15
                     },
                     "id": 2,
                     "options": {
                         "cellHeight": "sm",
                         "showHeader": true
                     },
-                    "pluginVersion": "12.4.0-19913286788",
+                    "pluginVersion": "12.4.0-20585723282",
                     "targets": [
                         {
                             "datasource": {
@@ -673,6 +673,6 @@
     "timezone": "browser",
     "title": "CWMS - OpenDCS",
     "uid": "scdjm5w",
-    "version": 13,
+    "version": 2,
     "weekStart": ""
 }
