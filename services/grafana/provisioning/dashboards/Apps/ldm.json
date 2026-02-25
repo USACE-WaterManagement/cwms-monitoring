@@ -24,42 +24,15 @@
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 4,
     "links": [],
     "panels": [
-        {
-            "fieldConfig": {
-                "defaults": {},
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 2,
-                "w": 24,
-                "x": 0,
-                "y": 0
-            },
-            "id": 67,
-            "options": {
-                "code": {
-                    "language": "plaintext",
-                    "showLineNumbers": false,
-                    "showMiniMap": false
-                },
-                "content": "# LDM",
-                "mode": "markdown"
-            },
-            "pluginVersion": "11.5.2",
-            "title": "",
-            "transparent": true,
-            "type": "text"
-        },
         {
             "collapsed": false,
             "gridPos": {
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 2
+                "y": 0
             },
             "id": 61,
             "panels": [],
@@ -101,6 +74,7 @@
                             "type": "linear"
                         },
                         "showPoints": "auto",
+                        "showValues": false,
                         "spanNulls": false,
                         "stacking": {
                             "group": "A",
@@ -118,7 +92,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -134,7 +108,7 @@
                 "h": 6,
                 "w": 10,
                 "x": 0,
-                "y": 3
+                "y": 1
             },
             "id": 59,
             "options": {
@@ -150,7 +124,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "datasource": {
@@ -192,7 +166,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -208,7 +182,7 @@
                 "h": 3,
                 "w": 3,
                 "x": 10,
-                "y": 3
+                "y": 1
             },
             "id": 62,
             "options": {
@@ -228,7 +202,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "datasource": {
@@ -270,7 +244,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -286,7 +260,7 @@
                 "h": 3,
                 "w": 3,
                 "x": 13,
-                "y": 3
+                "y": 1
             },
             "id": 63,
             "options": {
@@ -306,7 +280,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "datasource": {
@@ -348,7 +322,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -364,7 +338,7 @@
                 "h": 3,
                 "w": 3,
                 "x": 16,
-                "y": 3
+                "y": 1
             },
             "id": 66,
             "options": {
@@ -384,7 +358,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "datasource": {
@@ -427,7 +401,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -443,7 +417,7 @@
                 "h": 3,
                 "w": 5,
                 "x": 10,
-                "y": 6
+                "y": 4
             },
             "id": 64,
             "options": {
@@ -463,7 +437,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "datasource": {
@@ -506,7 +480,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -522,7 +496,7 @@
                 "h": 3,
                 "w": 4,
                 "x": 15,
-                "y": 6
+                "y": 4
             },
             "id": 65,
             "options": {
@@ -542,7 +516,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "datasource": {
@@ -577,7 +551,7 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 9
+                "y": 7
             },
             "id": 44,
             "panels": [],
@@ -589,7 +563,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -619,6 +592,7 @@
                             "type": "linear"
                         },
                         "showPoints": "auto",
+                        "showValues": false,
                         "spanNulls": false,
                         "stacking": {
                             "group": "A",
@@ -637,7 +611,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -653,7 +627,7 @@
                 "h": 5,
                 "w": 9,
                 "x": 0,
-                "y": 10
+                "y": 8
             },
             "id": 46,
             "options": {
@@ -669,7 +643,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "CPU Utilization",
@@ -737,7 +711,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "decimals": 0,
@@ -749,7 +722,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "orange",
@@ -769,7 +742,7 @@
                 "h": 5,
                 "w": 3,
                 "x": 9,
-                "y": 10
+                "y": 8
             },
             "id": 47,
             "options": {
@@ -787,7 +760,7 @@
                 "showThresholdMarkers": true,
                 "sizing": "auto"
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "CPU Utilization",
@@ -887,7 +860,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -902,7 +875,7 @@
                 "h": 5,
                 "w": 12,
                 "x": 12,
-                "y": 10
+                "y": 8
             },
             "id": 51,
             "options": {
@@ -927,7 +900,7 @@
                 "xTickLabelRotation": 0,
                 "xTickLabelSpacing": 100
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "datasource": {
@@ -940,7 +913,6 @@
                     "editorMode": "builder",
                     "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "legendFormat": "__auto",
@@ -970,7 +942,6 @@
                     "editorMode": "builder",
                     "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "legendFormat": "__auto",
@@ -1000,7 +971,6 @@
                     "editorMode": "builder",
                     "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "legendFormat": "__auto",
@@ -1030,7 +1000,6 @@
                     "editorMode": "builder",
                     "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "legendFormat": "__auto",
@@ -1048,6 +1017,29 @@
                     "region": "default",
                     "sqlExpression": "",
                     "statistic": "Sum"
+                },
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/ApplicationELB",
+                    "period": "",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Metrics",
+                    "refId": "E",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
                 }
             ],
             "title": "ELB Target Requests",
@@ -1058,7 +1050,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -1088,6 +1079,7 @@
                             "type": "linear"
                         },
                         "showPoints": "auto",
+                        "showValues": false,
                         "spanNulls": false,
                         "stacking": {
                             "group": "A",
@@ -1106,7 +1098,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -1122,7 +1114,7 @@
                 "h": 5,
                 "w": 9,
                 "x": 0,
-                "y": 15
+                "y": 13
             },
             "id": 48,
             "options": {
@@ -1138,7 +1130,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "CPU Utilization",
@@ -1206,7 +1198,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "decimals": 0,
@@ -1218,7 +1209,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "orange",
@@ -1238,7 +1229,7 @@
                 "h": 5,
                 "w": 3,
                 "x": 9,
-                "y": 15
+                "y": 13
             },
             "id": 49,
             "options": {
@@ -1256,7 +1247,7 @@
                 "showThresholdMarkers": true,
                 "sizing": "auto"
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "CPU Utilization",
@@ -1356,7 +1347,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -1371,7 +1362,7 @@
                 "h": 5,
                 "w": 12,
                 "x": 12,
-                "y": 15
+                "y": 13
             },
             "id": 69,
             "options": {
@@ -1396,7 +1387,7 @@
                 "xTickLabelRotation": 0,
                 "xTickLabelSpacing": 100
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "datasource": {
@@ -1409,7 +1400,6 @@
                     "editorMode": "builder",
                     "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "legendFormat": "__auto",
@@ -1439,7 +1429,6 @@
                     "editorMode": "builder",
                     "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "legendFormat": "__auto",
@@ -1469,7 +1458,6 @@
                     "editorMode": "builder",
                     "expr": "rate(cumulus_api_requests_total{instance=\"${environment}-cumulus-api.localvpc:9090\"}[$__rate_interval])",
                     "expression": "",
-                    "hide": false,
                     "id": "",
                     "label": "",
                     "legendFormat": "__auto",
@@ -1491,6 +1479,32 @@
             ],
             "title": "ELB Requests to API",
             "type": "barchart"
+        },
+        {
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 2,
+                "w": 24,
+                "x": 0,
+                "y": 18
+            },
+            "id": 67,
+            "options": {
+                "code": {
+                    "language": "plaintext",
+                    "showLineNumbers": false,
+                    "showMiniMap": false
+                },
+                "content": "# LDM",
+                "mode": "markdown"
+            },
+            "pluginVersion": "12.4.0-22081664032",
+            "title": "",
+            "transparent": true,
+            "type": "text"
         },
         {
             "collapsed": false,
@@ -1526,7 +1540,7 @@
                 "content": "## LDM-Private\n\nInternal LDM instance that takes action on products and sends to the API for storage.",
                 "mode": "markdown"
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "title": "",
             "type": "text"
         },
@@ -1535,7 +1549,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -1565,6 +1578,7 @@
                             "type": "linear"
                         },
                         "showPoints": "auto",
+                        "showValues": false,
                         "spanNulls": false,
                         "stacking": {
                             "group": "A",
@@ -1583,7 +1597,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "orange",
@@ -1619,7 +1633,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "CPU Utilization",
@@ -1687,7 +1701,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -1702,7 +1715,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "orange",
@@ -1740,7 +1753,7 @@
                 "showThresholdMarkers": true,
                 "sizing": "auto"
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -1820,7 +1833,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -1856,7 +1869,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -1937,7 +1950,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -1972,7 +1985,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -2053,7 +2066,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -2088,7 +2101,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -2169,7 +2182,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -2204,7 +2217,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -2273,7 +2286,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -2303,6 +2315,7 @@
                             "type": "linear"
                         },
                         "showPoints": "auto",
+                        "showValues": false,
                         "spanNulls": false,
                         "stacking": {
                             "group": "A",
@@ -2321,7 +2334,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "yellow",
@@ -2357,7 +2370,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "Memory Utilization",
@@ -2425,7 +2438,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -2440,7 +2452,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "orange",
@@ -2478,7 +2490,7 @@
                 "showThresholdMarkers": true,
                 "sizing": "auto"
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -2559,7 +2571,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -2595,7 +2607,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -2677,7 +2689,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -2713,7 +2725,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -2776,7 +2788,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -2806,6 +2817,7 @@
                             "type": "linear"
                         },
                         "showPoints": "auto",
+                        "showValues": false,
                         "spanNulls": false,
                         "stacking": {
                             "group": "A",
@@ -2822,7 +2834,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -2854,7 +2866,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -2923,7 +2935,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -2936,7 +2947,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -2972,7 +2983,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -3041,7 +3052,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -3054,7 +3064,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -3090,7 +3100,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -3159,7 +3169,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -3172,7 +3181,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -3208,7 +3217,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -3306,7 +3315,7 @@
                 "content": "## LDM-Sender\n\nSends files to external services.",
                 "mode": "markdown"
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "title": "",
             "type": "text"
         },
@@ -3315,7 +3324,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -3345,6 +3353,7 @@
                             "type": "linear"
                         },
                         "showPoints": "auto",
+                        "showValues": false,
                         "spanNulls": false,
                         "stacking": {
                             "group": "A",
@@ -3363,7 +3372,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "orange",
@@ -3399,7 +3408,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "CPU Utilization",
@@ -3467,7 +3476,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -3482,7 +3490,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "orange",
@@ -3520,7 +3528,7 @@
                 "showThresholdMarkers": true,
                 "sizing": "auto"
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -3599,7 +3607,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -3634,7 +3642,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -3714,7 +3722,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -3749,7 +3757,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -3829,7 +3837,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -3864,7 +3872,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -3944,7 +3952,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -3979,7 +3987,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -4048,7 +4056,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -4078,6 +4085,7 @@
                             "type": "linear"
                         },
                         "showPoints": "auto",
+                        "showValues": false,
                         "spanNulls": false,
                         "stacking": {
                             "group": "A",
@@ -4096,7 +4104,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "yellow",
@@ -4132,7 +4140,7 @@
                     "sort": "none"
                 }
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "Memory Utilization",
@@ -4200,7 +4208,6 @@
                 "type": "cloudwatch",
                 "uid": "P034F075C744B399F"
             },
-            "description": "",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -4215,7 +4222,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "orange",
@@ -4253,7 +4260,7 @@
                 "showThresholdMarkers": true,
                 "sizing": "auto"
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -4332,7 +4339,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -4367,7 +4374,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -4447,7 +4454,7 @@
                         "steps": [
                             {
                                 "color": "green",
-                                "value": null
+                                "value": 0
                             },
                             {
                                 "color": "red",
@@ -4483,7 +4490,7 @@
                 "textMode": "auto",
                 "wideLayout": true
             },
-            "pluginVersion": "11.5.2",
+            "pluginVersion": "12.4.0-22081664032",
             "targets": [
                 {
                     "alias": "",
@@ -4546,14 +4553,356 @@
             "title": "ldm-sender Queue - Approx Age of Oldest Message",
             "transparent": true,
             "type": "stat"
+        },
+        {
+            "collapsed": false,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 52
+            },
+            "id": 74,
+            "panels": [],
+            "title": "LDM Public",
+            "type": "row"
+        },
+        {
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 24,
+                "x": 0,
+                "y": 53
+            },
+            "id": 76,
+            "options": {
+                "code": {
+                    "language": "plaintext",
+                    "showLineNumbers": false,
+                    "showMiniMap": false
+                },
+                "content": "## LDM-Public\n\nPublic Facing LDM Instance (EC2)",
+                "mode": "markdown"
+            },
+            "pluginVersion": "12.4.0-22081664032",
+            "title": "",
+            "type": "text"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 20,
+                        "gradientMode": "scheme",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "showValues": false,
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": 0
+                            },
+                            {
+                                "color": "orange",
+                                "value": 70
+                            },
+                            {
+                                "color": "red",
+                                "value": 85
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 56
+            },
+            "id": 75,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "12.4.0-22081664032",
+            "targets": [
+                {
+                    "alias": "CPU Utilization",
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {},
+                    "expression": "",
+                    "id": "",
+                    "label": "CPU Utilization",
+                    "matchExact": true,
+                    "metricEditorMode": 0,
+                    "metricName": "CPUUtilization",
+                    "metricQueryType": 1,
+                    "namespace": "AWS/EC2",
+                    "period": "300",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sql": {
+                        "from": {
+                            "property": {
+                                "name": "AWS/EC2",
+                                "type": "string"
+                            },
+                            "type": "property"
+                        },
+                        "select": {
+                            "name": "AVG",
+                            "parameters": [
+                                {
+                                    "name": "CPUUtilization",
+                                    "type": "functionParameter"
+                                }
+                            ],
+                            "type": "function"
+                        },
+                        "where": {
+                            "expressions": [
+                                {
+                                    "operator": {
+                                        "name": "=",
+                                        "value": "$ldm_instance"
+                                    },
+                                    "property": {
+                                        "name": "InstanceId",
+                                        "type": "string"
+                                    },
+                                    "type": "operator"
+                                }
+                            ],
+                            "type": "and"
+                        }
+                    },
+                    "sqlExpression": "SELECT AVG(CPUUtilization) FROM \"AWS/EC2\" WHERE InstanceId = '$ldm_instance'",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "CPU Utilization",
+            "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "cloudwatch",
+                "uid": "P034F075C744B399F"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisBorderShow": false,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "showValues": false,
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": 0
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "decbytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 10,
+                "x": 9,
+                "y": 56
+            },
+            "id": 77,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "12.4.0-22081664032",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "InstanceId": "$ldm_instance"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "NetworkIn",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/EC2",
+                    "period": "300",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Metrics",
+                    "refId": "A",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                },
+                {
+                    "datasource": {
+                        "type": "cloudwatch",
+                        "uid": "P034F075C744B399F"
+                    },
+                    "dimensions": {
+                        "InstanceId": "$ldm_instance"
+                    },
+                    "expression": "",
+                    "id": "",
+                    "label": "",
+                    "logGroups": [],
+                    "matchExact": false,
+                    "metricEditorMode": 0,
+                    "metricName": "NetworkOut",
+                    "metricQueryType": 0,
+                    "namespace": "AWS/EC2",
+                    "period": "300",
+                    "queryLanguage": "CWLI",
+                    "queryMode": "Metrics",
+                    "refId": "B",
+                    "region": "default",
+                    "sqlExpression": "",
+                    "statistic": "Average"
+                }
+            ],
+            "title": "Network In/Out",
+            "type": "timeseries"
         }
     ],
     "preload": false,
     "refresh": "5m",
-    "schemaVersion": 40,
+    "schemaVersion": 42,
     "tags": [],
     "templating": {
-        "list": []
+        "list": [
+            {
+                "allowCustomValue": false,
+                "current": {
+                    "text": "i-0f7bb55c0a03f09f3",
+                    "value": "i-0f7bb55c0a03f09f3"
+                },
+                "label": "LDM EC2 Instance",
+                "name": "ldm_instance",
+                "options": [],
+                "query": "i-0f7bb55c0a03f09f3,i-01d9a3e3f333a545f,i-08e513971237087e6",
+                "type": "custom",
+                "valuesFormat": "csv"
+            }
+        ]
     },
     "time": {
         "from": "now-1h",
@@ -4571,9 +4920,9 @@
             "1d"
         ]
     },
-    "timezone": "",
+    "timezone": "browser",
     "title": "LDM",
     "uid": "feffap0rvtse8e",
-    "version": 2,
+    "version": 3,
     "weekStart": ""
 }
