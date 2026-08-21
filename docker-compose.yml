@@ -50,7 +50,7 @@ services:
       - POSTGRES_PASSWORD=grafana # Set PostgreSQL password
       - POSTGRES_DB=grafana # Create a database named 'grafana'
     ports:
-      - "5432:5432"
+      - "5432"    
 
     # volumes:
     # - postgres_data:/var/lib/postgresql/data  # Persist PostgreSQL data
