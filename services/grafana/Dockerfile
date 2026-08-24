@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-FROM grafana/grafana:12.4.4
-
-USER root
-=======
 FROM alpine:3.24.1 AS cert-builder
->>>>>>> 970c789 (Switch to distroless image.)
 
 # Install CA certificates and curl (needed for downloading the RDS CA bundle)
 RUN apk add --no-cache ca-certificates curl
