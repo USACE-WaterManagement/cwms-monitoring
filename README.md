@@ -2,7 +2,16 @@ Coming soon
 
 # CWMS Monitoring – Grafana Service
 
-## Start the Service
+# To update
+
+## Grafana
+
+Go to the services/grafana/Dockerfile
+
+Update the source version to the latest. Then do the same in each branch.
+At this time pushing to the branch will update AWS.
+
+# Start the Service
 
 To build and start Grafana (and supporting services), run:
 
