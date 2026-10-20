@@ -9,11 +9,11 @@ scrape_configs:
     tls_config:
       ca_file: /etc/ssl/certs/ca-certificates.crt
     http_sd_configs:
-      # TODO figure out
-      - url: '${DISCOVERY_URL}'
+      - url: '<no value>'
         refresh_interval: 1h
 
 storage:
   tsdb:
     retention:
-      time: 15d
+      time: 15dention:
+      time: 15dd
