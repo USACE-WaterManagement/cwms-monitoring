@@ -9,7 +9,7 @@ RUN curl -o /etc/ssl/certs/rds-ca.pem https://truststore.pki.us-gov-west-1.rds.a
 # Optionally append the RDS CA to system's trusted certificate bundle
 RUN cat /etc/ssl/certs/rds-ca.pem >> /etc/ssl/certs/ca-certificates.crt
 
-FROM grafana/grafana:13.2.3-distroless
+FROM grafana/grafana:13.2.4-distroless
 
 COPY --from=cert-builder /etc/ssl/ /etc/ssl
 # Make sure the SSL certificate is accessible by Grafana
