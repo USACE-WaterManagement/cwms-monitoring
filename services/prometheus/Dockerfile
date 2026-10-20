@@ -22,5 +22,5 @@ COPY --from=cert-builder /etc/ssl/ /etc/ssl
 # Base image does this, do again just to make sure
 USER 65532:65532
 EXPOSE 9090
-ENTRYPOINT []
-#CMD ["/driver", "/bin/prometheus" ]
+ENTRYPOINT ["/driver"]
+CMD ["/bin/prometheus"]
