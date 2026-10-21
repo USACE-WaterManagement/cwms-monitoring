@@ -2,6 +2,11 @@ networks:
   default:
     name: cwms_monitoring
 
+volumes:
+  database:
+  prometheus:
+
+
 services:
   #--------------------------------
   grafana:
@@ -38,10 +43,25 @@ services:
     restart: always
     networks:
       - default
-    # volumes:
-    # - ./_volumes/grafana/provisioning:/etc/grafana/provisioning
+    volumes:
+      - ./compose_files/grafana/provisioning:/etc/grafana/provisioning:ro
     # - ./_volumes/grafana/data:/var/lib/grafana
   #--------------------------------
+  prometheus:
+    build:
+      context: services/prometheus
+    container_name: prometheus
+    ports:
+      - 9090
+    environment:
+      - DISCOVERY_URL=http://web/discovery.json
+      - REFRESH_INTERVAL=10s
+  web:
+    image: nginx:alpine
+    ports:
+      - 80
+    volumes:
+      - ./compose_files/discovery:/usr/share/nginx/html:ro
   postgres:
     image: postgres:17 # Use PostgreSQL 17 image
     container_name: postgres
@@ -52,8 +72,8 @@ services:
     ports:
       - "5432"    
 
-    # volumes:
-    # - postgres_data:/var/lib/postgresql/data  # Persist PostgreSQL data
+    volumes:
+      - database:/var/lib/postgresql/data  # Persist PostgreSQL data
 
     networks:
       - default

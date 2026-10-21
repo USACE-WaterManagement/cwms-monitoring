@@ -10,7 +10,10 @@ scrape_configs:
       ca_file: /etc/ssl/certs/ca-certificates.crt
     http_sd_configs:
       - url: '{{.DISCOVERY_URL}}'
-        refresh_interval: 1h
+        refresh_interval: {{.REFRESH_INTERVAL}}
+  - job_name: 'self'
+    static_configs:
+      - targets: ['localhost:9090']
 
 storage:
   tsdb:
