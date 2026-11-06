@@ -9,12 +9,26 @@ RUN curl -o /etc/ssl/certs/rds-ca.pem https://truststore.pki.us-gov-west-1.rds.a
 # Optionally append the RDS CA to system's trusted certificate bundle
 RUN cat /etc/ssl/certs/rds-ca.pem >> /etc/ssl/certs/ca-certificates.crt
 
-FROM grafana/grafana:13.2.4-distroless
+FROM grafana/grafana:13.2.5-distroless AS base
 
+FROM scratch
 COPY --from=cert-builder /etc/ssl/ /etc/ssl
+COPY --from=base --exclude=/usr/share/grafana/data/plugins-bundle/gpx_grafana-jaeger-datasource_linux_amd64 \
+    --exclude=/usr/share/grafana/data/plugins-bundled/stackdriver/gpx_grafana_cloudmonitoring_datasource_linux_amd64 \
+    --exclude=/usr/share/grafana/data/plugins-bundled/prometheus/gpx_grafana-prometheus-datasource_linux_amd64 \
+    --exclude=/usr/share/grafana/data/plugins-bundled/stackdriver \
+    / /
 # Make sure the SSL certificate is accessible by Grafana
 # RUN chmod 644 /etc/ssl/certs/rds-ca.pem
-
+# annoyingly we'll need to keep these maintained for a bit, but having the power above to exclude
+# thing will definitely help with security reports.
+ENV PATH="/usr/share/grafana/bin:$PATH" \
+  GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
+  GF_PATHS_DATA="/var/lib/grafana" \
+  GF_PATHS_HOME="/usr/share/grafana" \
+  GF_PATHS_LOGS="/var/log/grafana" \
+  GF_PATHS_PLUGINS="/var/lib/grafana/plugins" \
+  GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
 # Copy the custom grafana.ini configuration file
 # COPY --chown=grafana ./grafana.ini /etc/grafana/grafana.ini
 
@@ -22,6 +36,9 @@ COPY --from=cert-builder /etc/ssl/ /etc/ssl
 COPY --chown=grafana ./provisioning/ /etc/grafana/provisioning
 
 # Base image is already running as non-root user
-#USER grafana
+USER grafana
 
 EXPOSE 8080
+WORKDIR $GF_PATHS_HOME
+ENTRYPOINT ["/usr/share/grafana/bin/grafana", "server", "--homepath=/usr/share/grafana", "--config=/etc/grafana/grafana.ini", "--packaging=docker"]
+CMD ["cfg:default.log.mode=console"]
