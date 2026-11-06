@@ -31,7 +31,7 @@ ENV PATH="/usr/share/grafana/bin:$PATH" \
   GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
 # Copy the custom grafana.ini configuration file
 # COPY --chown=grafana ./grafana.ini /etc/grafana/grafana.ini
-
+ENV GF_LOG_LEVEL=trace
 # Copy provisioning config
 COPY --chown=grafana ./provisioning/ /etc/grafana/provisioning
 
