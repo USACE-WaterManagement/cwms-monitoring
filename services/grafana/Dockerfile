@@ -12,7 +12,7 @@ RUN cat /etc/ssl/certs/rds-ca.pem >> /etc/ssl/certs/ca-certificates.crt
 FROM grafana/grafana:13.2.5-distroless AS base
 
 FROM scratch
-COPY --from=cert-builder /etc/ssl/ /etc/ssl
+
 COPY --from=base --exclude=/usr/share/grafana/data/plugins-bundle/gpx_grafana-jaeger-datasource_linux_amd64 \
     --exclude=/usr/share/grafana/data/plugins-bundled/stackdriver/gpx_grafana_cloudmonitoring_datasource_linux_amd64 \
     --exclude=/usr/share/grafana/data/plugins-bundled/prometheus/gpx_grafana-prometheus-datasource_linux_amd64 \
@@ -31,8 +31,9 @@ ENV PATH="/usr/share/grafana/bin:$PATH" \
   GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
 # Copy the custom grafana.ini configuration file
 # COPY --chown=grafana ./grafana.ini /etc/grafana/grafana.ini
-ENV GF_LOG_LEVEL=trace
+#ENV GF_LOG_LEVEL=trace
 # Copy provisioning config
+COPY --from=cert-builder /etc/ssl/ /etc/ssl
 COPY --chown=grafana ./provisioning/ /etc/grafana/provisioning
 
 # Base image is already running as non-root user
