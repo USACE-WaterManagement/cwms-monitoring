@@ -1,4 +1,4 @@
-FROM alpine:3.24.3 AS cert-builder
+FROM alpine:3.24.4 AS cert-builder
 
 # Install CA certificates and curl (needed for downloading the RDS CA bundle)
 RUN apk add --no-cache ca-certificates curl
@@ -13,10 +13,10 @@ FROM grafana/grafana:13.2.5-distroless AS base
 
 FROM scratch
 
-COPY --from=base --exclude=/usr/share/grafana/data/plugins-bundle/gpx_grafana-jaeger-datasource_linux_amd64 \
-    --exclude=/usr/share/grafana/data/plugins-bundled/stackdriver/gpx_grafana_cloudmonitoring_datasource_linux_amd64 \
-    --exclude=/usr/share/grafana/data/plugins-bundled/prometheus/gpx_grafana-prometheus-datasource_linux_amd64 \
-    --exclude=/usr/share/grafana/data/plugins-bundled/stackdriver \
+COPY --from=base \
+    --exclude=/usr/share/grafana/data/plugins-bundled/jaeger/** \
+    --exclude=/usr/share/grafana/data/plugins-bundled/stackdriver/** \
+    --exclude=/usr/share/grafana/data/plugins-bundled/prometheus/** \
     / /
 # Make sure the SSL certificate is accessible by Grafana
 # RUN chmod 644 /etc/ssl/certs/rds-ca.pem
@@ -31,8 +31,7 @@ ENV PATH="/usr/share/grafana/bin:$PATH" \
   GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
 # Copy the custom grafana.ini configuration file
 # COPY --chown=grafana ./grafana.ini /etc/grafana/grafana.ini
-#ENV GF_LOG_LEVEL=trace
-# Copy provisioning config
+# MAKE SURE the copy from cert-builder is always after the above, otherwise our updated trust gets overridden
 COPY --from=cert-builder /etc/ssl/ /etc/ssl
 COPY --chown=grafana ./provisioning/ /etc/grafana/provisioning
 
