@@ -1,3 +1,4 @@
+# syntax=docker.io/docker/dockerfile:1
 FROM alpine:3.24.4 AS cert-builder
 
 # Install CA certificates and curl (needed for downloading the RDS CA bundle)
