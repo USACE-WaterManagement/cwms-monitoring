@@ -15,9 +15,9 @@ FROM grafana/grafana:13.2.5-distroless AS base
 FROM scratch
 
 COPY --from=base \
-    --exclude=/usr/share/grafana/data/plugins-bundled/jaeger/** \
-    --exclude=/usr/share/grafana/data/plugins-bundled/stackdriver/** \
-    --exclude=/usr/share/grafana/data/plugins-bundled/prometheus/** \
+    --exclude=usr/share/grafana/data/plugins-bundled/jaeger/** \
+    --exclude=usr/share/grafana/data/plugins-bundled/stackdriver/** \
+    --exclude=usr/share/grafana/data/plugins-bundled/prometheus/** \
     / /
 # Make sure the SSL certificate is accessible by Grafana
 # RUN chmod 644 /etc/ssl/certs/rds-ca.pem
