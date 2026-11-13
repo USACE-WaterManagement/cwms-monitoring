@@ -66,7 +66,7 @@ jobs:
         run: |
           REPO=`echo "${{github.repository}}" | tr  '[:upper:]' '[:lower:]'`
           # Create and push images
-          docker build -t grafana:build-latest --target=lrgs services/grafana          
+          docker build -t grafana:build-latest services/grafana          
           docker tag grafana:build-latest ghcr.io/${REPO}/cwms-monitoring/grafana:$VERSION
           docker push ghcr.io/${REPO}/cwms-monitoring/grafana:$VERSION          
           
