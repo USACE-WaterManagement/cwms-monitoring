@@ -1,3 +1,4 @@
+# syntax=docker.io/docker/dockerfile:1
 FROM alpine:3.24.4 AS cert-builder
 
 # Install CA certificates and curl (needed for downloading the RDS CA bundle)
@@ -14,9 +15,9 @@ FROM grafana/grafana:13.2.5-distroless AS base
 FROM scratch
 
 COPY --from=base \
-    --exclude=/usr/share/grafana/data/plugins-bundled/jaeger/** \
-    --exclude=/usr/share/grafana/data/plugins-bundled/stackdriver/** \
-    --exclude=/usr/share/grafana/data/plugins-bundled/prometheus/** \
+    --exclude=usr/share/grafana/data/plugins-bundled/jaeger/** \
+    --exclude=usr/share/grafana/data/plugins-bundled/stackdriver/** \
+    --exclude=usr/share/grafana/data/plugins-bundled/prometheus/** \
     / /
 # Make sure the SSL certificate is accessible by Grafana
 # RUN chmod 644 /etc/ssl/certs/rds-ca.pem
@@ -33,6 +34,7 @@ ENV PATH="/usr/share/grafana/bin:$PATH" \
 # COPY --chown=grafana ./grafana.ini /etc/grafana/grafana.ini
 # MAKE SURE the copy from cert-builder is always after the above, otherwise our updated trust gets overridden
 COPY --from=cert-builder /etc/ssl/ /etc/ssl
+# Copy provisioning config
 COPY --chown=grafana ./provisioning/ /etc/grafana/provisioning
 
 # Base image is already running as non-root user
