@@ -39,3 +39,8 @@ To stop and remove the containers, run:
 ```bash
 docker-compose down
 ```
+
+
+NOTE: at this time you will need need to manually change cwbi-test and cwbi-prod branches and push. The dashboard configuration
+is stored in the branches and it appears they load every time. Still working out how to deal with that. Looks like there
+are ways, just need to properly establish the mechanisms.

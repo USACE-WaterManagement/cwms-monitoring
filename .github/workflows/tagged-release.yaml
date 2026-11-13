@@ -1,0 +1,15 @@
+---
+name: Tagged Release
+on:
+  push:
+    tags:
+      # Allow an additional marker if multiple releases needed within a day.
+      - '[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]-[a-z]*'
+jobs:
+  release:
+    uses: ./.github/workflows/release.yml
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      branch: ${{github.ref_name}}
+      nightly: false

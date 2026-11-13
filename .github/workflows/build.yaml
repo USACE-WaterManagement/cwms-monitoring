@@ -1,0 +1,26 @@
+---
+name: Build And Test CWMS Data API
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    name: build and test images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean up disk space, so we don't run out.
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+      - name: checkout code
+        uses: actions/checkout@v7.0.1
+      - name: start up
+        run: |
+            docker compose up -d --wait --wait-timeout 300s
+        # would be nice to have more tests, but that depends on lot on the actual setup.
