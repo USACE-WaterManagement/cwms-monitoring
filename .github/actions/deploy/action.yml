@@ -51,9 +51,10 @@ runs:
       run: |
         docker pull ${IMAGE}:${IMAGE_TAG}
         docker tag $IMAGE:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        docker tag $IMAGE:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$ACTIVE_TAG
+        echo "Now pushing image"
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         if [ "${ACTIVATE}" == "true" ]; then
+          docker tag $IMAGE:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$ACTIVE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$ACTIVE_TAG
         fi
     - name: ECR Logout
