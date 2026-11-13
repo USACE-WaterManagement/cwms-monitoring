@@ -48,10 +48,14 @@ jobs:
         if: inputs.nightly == true
         run: |
           if [ "${{inputs.nightly}}" == "true" ]; then
-            echo "VERSION=${{inputs.branch}}-nightly" >> $GITHUB_OUTPUT
+            VERSION="${{inputs.branch}}-nightly"
+            PRERELEASE=true
           else
-            echo "VERSION=${{inputs.branch}}" >> $GITHUB_OUTPUT
+            VERSION="${{inputs.branch}}"
+            PRERELEASE=false
           fi
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "prerelease=${PRERELEASE}" >> "$GITHUB_OUTPUT"
       - name: Log in to the Container registry
         id: login-ghcr
         uses: docker/login-action@v3.3.0
@@ -82,7 +86,16 @@ jobs:
           
           # Set output.
           echo "grafana_image=ghcr.io/${REPO}/grafana:$VERSION" >> $GITHUB_OUTPUT
-          
+      - name: Create GitHub Release
+        id: create_release
+        # Allow testing without creating a release
+        if: github.event_name != 'pull_request' && (github.event.ref == 'refs/heads/main' || startsWith(github.event.ref, 'refs/tags'))
+        uses: softprops/action-gh-release@v2.6.1
+        with:
+          tag_name: ${{steps.version.outputs.VERSION}}
+          generate_release_notes: true
+          prerelease: ${{steps.version.outputs.prerelease}}
+          token: ${{ secrets.token != null && secrets.token || secrets.GITHUB_TOKEN }} 
       - name: Logout of GH registry
         if: ${{ always() }}
         run: |
