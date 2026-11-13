@@ -66,7 +66,17 @@ jobs:
         run: |
           REPO=`echo "${{github.repository}}" | tr  '[:upper:]' '[:lower:]'`
           # Create and push images
-          docker build -t grafana:build-latest services/grafana          
+          if [ "${{inputs.nightly}}" == "true" ]; then
+            # Scheduled build, try the latest one.
+            # NOTE: this works, but could be brittle as-is. Should probably be moved to an action
+            # and pages looped through to be sure.
+            # may also make sense to move to secret and let the schedule do this part.
+            GRAFANA_VERSION=$(curl https://hub.docker.com/v2/repositories/grafana/grafana/tags?page_size=100 | jq -r '.results[].name' | grep "13\.2\.[0-9][0-9]*$" | head -1)
+            docker build --build-arg GRAFANA_VERSION=${GRAFANA_VERSION} -t grafana:build-latest services/grafana          
+          else
+            use the configured version
+            docker build --build-arg GRAFANA_VERSION=${{secrets.GRAFANA_VERSION}} -t grafana:build-latest services/grafana          
+          fi
           docker tag grafana:build-latest ghcr.io/${REPO}/cwms-monitoring/grafana:$VERSION
           docker push ghcr.io/${REPO}/cwms-monitoring/grafana:$VERSION          
           
