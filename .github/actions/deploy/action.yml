@@ -49,6 +49,7 @@ runs:
         IMAGE: ghcr.io/usace-watermanagement/cwms-monitoring/grafana
       shell: bash
       run: |
+        echo "Getting image"
         docker pull ${IMAGE}:${IMAGE_TAG}
         docker tag $IMAGE:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "Now pushing image"

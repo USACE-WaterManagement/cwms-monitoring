@@ -77,11 +77,11 @@ jobs:
             use the configured version
             docker build --build-arg GRAFANA_VERSION=${{secrets.GRAFANA_VERSION}} -t grafana:build-latest services/grafana          
           fi
-          docker tag grafana:build-latest ghcr.io/${REPO}/cwms-monitoring/grafana:$VERSION
-          docker push ghcr.io/${REPO}/cwms-monitoring/grafana:$VERSION          
+          docker tag grafana:build-latest ghcr.io/${REPO}/grafana:$VERSION
+          docker push ghcr.io/${REPO}/grafana:$VERSION
           
           # Set output.
-          echo "grafana_image=ghcr.io/${REPO}/cwms-monitoring/grafana:$VERSION" >> $GITHUB_OUTPUT
+          echo "grafana_image=ghcr.io/${REPO}/grafana:$VERSION" >> $GITHUB_OUTPUT
           
       - name: Logout of GH registry
         if: ${{ always() }}
