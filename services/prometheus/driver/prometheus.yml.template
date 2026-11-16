@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 60s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 60s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+
+scrape_configs:
+  - job_name: 'cwms-metric-discovery'
+    tls_config:
+      ca_file: /etc/ssl/certs/ca-certificates.crt
+    http_sd_configs:
+      - url: '{{.DISCOVERY_URL}}'
+        refresh_interval: {{.REFRESH_INTERVAL}}
+  - job_name: 'self'
+    static_configs:
+      - targets: ['localhost:9090']
+
+storage:
+  tsdb:
+    retention:
+      time: 15d
