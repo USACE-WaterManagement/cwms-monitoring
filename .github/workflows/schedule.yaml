@@ -10,7 +10,7 @@ jobs:
     permissions:
       packages: write
       contents: write
-    uses: ./.github/workflows/release.yml
+    uses: usace-watermanagement/cwms-monitoring/.github/workflows/release.yaml@main
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
     with:
