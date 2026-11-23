@@ -29,7 +29,7 @@ jobs:
         uses: usace-watermanagement/cwms-monitoring/.github/actions/deploy@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tag: dev-nightly
+          tag: main-nightly
           region: ${{secrets.REGION}}
           iam_role: ${{secrets.DEPLOY_ROLE}}
           activation_tag: ${{secrets.ACTIVATION_TAG}}
