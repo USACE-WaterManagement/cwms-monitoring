@@ -1,6 +1,6 @@
 ARG GRAFANA_VERSION=13.2.6
 # syntax=docker.io/docker/dockerfile:1
-FROM alpine:3.23 AS cert-builder
+FROM alpine:3.24 AS cert-builder
 
 # Install CA certificates and curl (needed for downloading the RDS CA bundle)
 RUN apk add --no-cache ca-certificates curl
